@@ -12,11 +12,11 @@ public class Data
     [XmlArray("Nodes")]
     //          nombreXML   Clase
     [XmlArrayItem("Node", typeof(Node))]
-    public Node[] Node { get; set; }
+    public Node[] Nodes { get; set; }
 
 
     public Data()
     {
-        Node = new Node[2];
+        Nodes = new Node[2];
     }
 }

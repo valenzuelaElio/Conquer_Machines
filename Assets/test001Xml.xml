@@ -3,18 +3,38 @@
 	<Nodes>
 		<Node>
 			<RawMaterial1>copper</RawMaterial1>
+			<RawMaterial2>iron</RawMaterial2>
+			<RawMaterial3>aluminium</RawMaterial3>
+			<Quantity1>10</Quantity1>
+			<Quantity2>10</Quantity2>
+			<Quantity3>30</Quantity3>
 			<NodeID>S001</NodeID>
 		</Node>
 		<Node>
 			<RawMaterial1>copper</RawMaterial1>
+			<RawMaterial2>iron</RawMaterial2>
+			<RawMaterial3>aluminium</RawMaterial3>
+			<Quantity1>20</Quantity1>
+			<Quantity2>30</Quantity2>
+			<Quantity3>90</Quantity3>
 			<NodeID>S002</NodeID>
 		</Node>
 		<Node>
 			<RawMaterial1>copper</RawMaterial1>
+			<RawMaterial2>iron</RawMaterial2>
+			<RawMaterial3>aluminium</RawMaterial3>
+			<Quantity1>30</Quantity1>
+			<Quantity2>90</Quantity2>
+			<Quantity3>100</Quantity3>
 			<NodeID>S003</NodeID>
 		</Node>
 		<Node>
 			<RawMaterial1>copper</RawMaterial1>
+			<RawMaterial2>iron</RawMaterial2>
+			<RawMaterial3>aluminium</RawMaterial3>
+			<Quantity1>20</Quantity1>
+			<Quantity2>80</Quantity2>
+			<Quantity3>30</Quantity3>
 			<NodeID>S004</NodeID>
 		</Node>
 	</Nodes>

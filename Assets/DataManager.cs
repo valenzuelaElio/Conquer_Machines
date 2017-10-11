@@ -4,59 +4,66 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using System.Xml.Serialization;
+using UnityEngine.UI;
 
 public class DataManager : MonoBehaviourSingleton<DataManager> {
-    string json;
+
     Data dataNodes;
+    string path = "Assets/test001Xml.xml";
+
+    public Text text;
 
     void Start () {
 
-        string path = "Assets/test001Xml.xml";
+        //dataNodes = XMLOperator.Deserialize<Data>(path); // Carga
 
-        //Test = XMLOperator.Deserialize<AssemblyLine>(path);
+        /*
+        dataNodes = new Data();
+        dataNodes.Nodes[0] = new Node();
+        dataNodes.Nodes[0].id = "N001";
+        dataNodes.Nodes[0].rawMaterial1 = "iron";
+        dataNodes.Nodes[0].rawMaterial2 = "copper";
+        dataNodes.Nodes[0].rawMaterial3 = "aluminium";
+        dataNodes.Nodes[0].cant1 = 10;
+        dataNodes.Nodes[0].cant2 = 20;
+        dataNodes.Nodes[0].cant3 = 30;
 
-        //dataNodes = XMLOperator.Deserialize<DataNodes>(path);
-
-        dataNodes = XMLOperator.Deserialize<Data>(path); // Carga
-
-        //dataNodes.Node = XMLOperator.Deserialize<Node>(path);
-
-        for (int i = 0; i < dataNodes.Node.Length; i++ )
-        {
-            Debug.Log(dataNodes.Node[i].id);
-            Debug.Log(dataNodes.Node[i].rawMaterial1);
-        }
-        //dataNodes.Node[0].id = "N001";
-        //dataNodes.Node[0].rawMaterial1 = "copper";
-
-        //dataNodes.Node[1] = new Node();
-        //dataNodes.Node[1].id = "N002";
-        //dataNodes.Node[1].rawMaterial1 = "iron";
-
-        XMLOperator.Serialize(dataNodes, path); //Sube
+        dataNodes.Nodes[1] = new Node();
+        dataNodes.Nodes[1].id = "N002";
+        dataNodes.Nodes[1].rawMaterial1 = "aluminium";
+        dataNodes.Nodes[1].rawMaterial2 = "iron";
+        dataNodes.Nodes[1].rawMaterial3 = "copper";
+        dataNodes.Nodes[1].cant1 = 40;
+        dataNodes.Nodes[1].cant1 = 50;
+        dataNodes.Nodes[1].cant1 = 60;
+        XMLOperator.Serialize(dataNodes, path); //Sube */
 
         //Node node = new Node();
         //XMLOperator.Serialize(node, path);
 
-        /*nodes = new List<Node>();
+        dataNodes = XMLOperator.Deserialize<Data>(path);
+        ImprimirDatosDeNodos();
 
-        for (int i = 4; i > 0; i--)
+        for (int i = 0; i < dataNodes.Nodes.Length; i++)
         {
-            Node node = XMLOperator.Deserialize<Node>(path);
-            nodes.Add(node);
-            Debug.Log(i);
-
+            text.text = text.text + dataNodes.Nodes[i].id + "\n";
+            text.text = text.text + (dataNodes.Nodes[i].rawMaterial1 + " = " + dataNodes.Nodes[i].cant1 + "\n");
+            text.text = text.text + (dataNodes.Nodes[i].rawMaterial2 + " = " + dataNodes.Nodes[i].cant2 + "\n");
+            text.text = text.text + (dataNodes.Nodes[i].rawMaterial3 + " = " + dataNodes.Nodes[i].cant3 + "\n");
+            text.text = text.text + ("---\n");
         }
+    }
 
-        foreach (Node node in nodes)
+    void ImprimirDatosDeNodos()
+    {
+        for (int i = 0; i < dataNodes.Nodes.Length; i++)
         {
-            Debug.Log(node.id);
-            Debug.Log(node.rawMaterial1);
-            Debug.Log(node.rawMaterial2);
-            Debug.Log(node.rawMaterial3);
-        }*/
-        
-
+            Debug.Log(dataNodes.Nodes[i].id);
+            Debug.Log(dataNodes.Nodes[i].rawMaterial1 + " = " + dataNodes.Nodes[i].cant1);
+            Debug.Log(dataNodes.Nodes[i].rawMaterial2 + " = " + dataNodes.Nodes[i].cant2);
+            Debug.Log(dataNodes.Nodes[i].rawMaterial3 + " = " + dataNodes.Nodes[i].cant3);
+            Debug.Log("---");
+        }
     }
 
 }

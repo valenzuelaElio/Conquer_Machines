@@ -18,11 +18,11 @@ public class Node
     public string rawMaterial3;
 
     [XmlElement("Quantity1")]
-    int cant1;
+    public int cant1;
     [XmlElement("Quantity2")]
-    int cant2;
+    public int cant2;
     [XmlElement("Quantity3")]
-    int cant3;
+    public int cant3;
 
     public Node()
     {
