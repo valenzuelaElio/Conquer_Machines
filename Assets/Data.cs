@@ -14,7 +14,6 @@ public class Data
     [XmlArrayItem("Node", typeof(Node))]
     public Node[] Nodes { get; set; }
 
-
     public Data()
     {
         Nodes = new Node[2];
