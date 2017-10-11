@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DataPool xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Nodes>
+		<Node>
+			<RawMaterial1>copper</RawMaterial1>
+			<NodeID>S001</NodeID>
+		</Node>
+		<Node>
+			<RawMaterial1>copper</RawMaterial1>
+			<NodeID>S002</NodeID>
+		</Node>
+		<Node>
+			<RawMaterial1>copper</RawMaterial1>
+			<NodeID>S003</NodeID>
+		</Node>
+		<Node>
+			<RawMaterial1>copper</RawMaterial1>
+			<NodeID>S004</NodeID>
+		</Node>
+	</Nodes>
+</DataPool>
