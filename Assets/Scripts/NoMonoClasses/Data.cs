@@ -8,10 +8,8 @@ using System.Xml.Serialization;
 [XmlRoot("DataPool")]
 public class Data
 {
-    //        nombre de la collecion 
-    [XmlArray("Nodes")]
-    //          nombreXML   Clase
-    [XmlArrayItem("Node", typeof(Node))]
+    [XmlArray("Nodes")] //[XmlArray(Nombre de la collecion)]
+    [XmlArrayItem("Node", typeof(Node))]// [XmlArrayItem(Nombre en el archivo Xml, Tipo de la clase)]
     public Node[] Nodes { get; set; }
 
     public Data()

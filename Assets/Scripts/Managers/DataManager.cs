@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class DataManager : MonoBehaviourSingleton<DataManager> {
 
-    Data dataNodes;
+    private static Data dataMaster;
+    public static Data Data { get { return dataMaster; } }
     string path = "Assets/DataFolder/test001Xml.xml";
 
     public Text text;
@@ -38,32 +39,39 @@ public class DataManager : MonoBehaviourSingleton<DataManager> {
         dataNodes.Nodes[1].cant1 = 60;
         XMLOperator.Serialize(dataNodes, path); //Sube */
 
-        //Node node = new Node();
-        //XMLOperator.Serialize(node, path);
-
-        dataNodes = XMLOperator.Deserialize<Data>(path);
+        Data = XMLOperator.Deserialize<Data>(path);
         ImprimirDatosDeNodos();
 
-        for (int i = 0; i < dataNodes.Nodes.Length; i++)
+        for (int i = 0; i < Data.Nodes.Length; i++)
         {
-            text.text = text.text + dataNodes.Nodes[i].id + "\n";
-            text.text = text.text + (dataNodes.Nodes[i].rawMaterial1 + " = " + dataNodes.Nodes[i].cant1 + "\n");
-            text.text = text.text + (dataNodes.Nodes[i].rawMaterial2 + " = " + dataNodes.Nodes[i].cant2 + "\n");
-            text.text = text.text + (dataNodes.Nodes[i].rawMaterial3 + " = " + dataNodes.Nodes[i].cant3 + "\n");
+            text.text = text.text + Data.Nodes[i].id + "\n";
+            text.text = text.text + (Data.Nodes[i].rawMaterial1 + " = " + Data.Nodes[i].cant1 + "\n");
+            text.text = text.text + (Data.Nodes[i].rawMaterial2 + " = " + Data.Nodes[i].cant2 + "\n");
+            text.text = text.text + (Data.Nodes[i].rawMaterial3 + " = " + Data.Nodes[i].cant3 + "\n");
             text.text = text.text + ("---\n");
         }
     }
 
     void ImprimirDatosDeNodos()
     {
-        for (int i = 0; i < dataNodes.Nodes.Length; i++)
+        for (int i = 0; i < Data.Nodes.Length; i++)
         {
-            Debug.Log(dataNodes.Nodes[i].id);
-            Debug.Log(dataNodes.Nodes[i].rawMaterial1 + " = " + dataNodes.Nodes[i].cant1);
-            Debug.Log(dataNodes.Nodes[i].rawMaterial2 + " = " + dataNodes.Nodes[i].cant2);
-            Debug.Log(dataNodes.Nodes[i].rawMaterial3 + " = " + dataNodes.Nodes[i].cant3);
+            Debug.Log(Data.Nodes[i].id);
+            Debug.Log(Data.Nodes[i].rawMaterial1 + " = " + Data.Nodes[i].cant1);
+            Debug.Log(Data.Nodes[i].rawMaterial2 + " = " + Data.Nodes[i].cant2);
+            Debug.Log(Data.Nodes[i].rawMaterial3 + " = " + Data.Nodes[i].cant3);
             Debug.Log("---");
         }
+    }
+
+    public static void SerializeData()
+    {
+
+    }
+
+    public static void DeserializeData()
+    {
+
     }
 
 }
