@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class DataManager : MonoBehaviourSingleton<DataManager> {
 
     Data dataNodes;
-    string path = "Assets/test001Xml.xml";
+    string path = "Assets/DataFolder/test001Xml.xml";
 
     public Text text;
 
