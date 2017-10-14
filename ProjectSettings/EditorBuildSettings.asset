@@ -4,4 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: cb9e18aa105605b4988b5608d79f28b3
+  - enabled: 1
+    path: Assets/Scenes/AssemblyLinesScene.unity
+    guid: 29b3d80ce96788f43a1ae6c6c3a71b34
+  - enabled: 1
+    path: Assets/Scenes/RobotInventory.unity
+    guid: 3bdacb8d3bc2e4b42a58862ca99fff39
+  - enabled: 1
+    path: Assets/Scenes/Extractions.unity
+    guid: bf402d6b7eb910042a4e853d449fdd6c
+  - enabled: 1
+    path: Assets/Scenes/BattleList.unity
+    guid: 22ddcd06efef1cb47ae8faf3fd987558

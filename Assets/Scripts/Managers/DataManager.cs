@@ -6,72 +6,96 @@ using UnityEngine;
 using System.Xml.Serialization;
 using UnityEngine.UI;
 
-public class DataManager : MonoBehaviourSingleton<DataManager> {
+public class DataManager{
 
-    private static Data dataMaster;
-    public static Data Data { get { return dataMaster; } }
-    string path = "Assets/DataFolder/test001Xml.xml";
+    private Data dataMaster;
+    public Data DataMaster { get { return dataMaster; } set { dataMaster = value; } }
+    private static string path = "Assets/DataFolder/test001Xml.xml";
 
     public Text text;
 
+    public DataManager(string XMLpath)
+    {
+        path = XMLpath;
+        dataMaster = new Data();
+
+        dataMaster.Nodes[0] = new Node();
+        dataMaster.Nodes[0].id = "N001";
+        dataMaster.Nodes[0].rawMaterial1 = "iron";
+        dataMaster.Nodes[0].rawMaterial2 = "copper";
+        dataMaster.Nodes[0].rawMaterial3 = "aluminium";
+        dataMaster.Nodes[0].cant1 = 10;
+        dataMaster.Nodes[0].cant2 = 20;
+        dataMaster.Nodes[0].cant3 = 30;
+
+        dataMaster.Nodes[1] = new Node();
+        dataMaster.Nodes[1].id = "N002";
+        dataMaster.Nodes[1].rawMaterial1 = "aluminium";
+        dataMaster.Nodes[1].rawMaterial2 = "iron";
+        dataMaster.Nodes[1].rawMaterial3 = "copper";
+        dataMaster.Nodes[1].cant1 = 40;
+        dataMaster.Nodes[1].cant1 = 50;
+        dataMaster.Nodes[1].cant1 = 60;
+
+        dataMaster.ScenesNames[0] = "Main";
+        dataMaster.ScenesNames[1] = "AssemblyLinesScene";
+        //dataMaster.ScenesNames[2] = "Extractions";
+
+        dataMaster.AssemblyLines[0] = new AssemblyLine();
+        dataMaster.AssemblyLines[0].Id = "L001";
+        dataMaster.AssemblyLines[0].AssemblyLineNodesId = new string[2];
+        dataMaster.AssemblyLines[0].AssemblyLineNodesId[0] = "N001";
+        dataMaster.AssemblyLines[0].AssemblyLineNodesId[1] = "N002";
+
+        dataMaster.AssemblyLines[1] = new AssemblyLine();
+        dataMaster.AssemblyLines[1].Id = "L002";
+        dataMaster.AssemblyLines[1].AssemblyLineNodesId = new string[2];
+        dataMaster.AssemblyLines[1].AssemblyLineNodesId[0] = "N003";
+        dataMaster.AssemblyLines[1].AssemblyLineNodesId[1] = "N004";
+
+        SerializeData();
+
+
+    }
+
     void Start () {
 
-        //dataNodes = XMLOperator.Deserialize<Data>(path); // Carga
+        //XMLOperator.Serialize(dataMaster, path);
 
-        /*
-        dataNodes = new Data();
-        dataNodes.Nodes[0] = new Node();
-        dataNodes.Nodes[0].id = "N001";
-        dataNodes.Nodes[0].rawMaterial1 = "iron";
-        dataNodes.Nodes[0].rawMaterial2 = "copper";
-        dataNodes.Nodes[0].rawMaterial3 = "aluminium";
-        dataNodes.Nodes[0].cant1 = 10;
-        dataNodes.Nodes[0].cant2 = 20;
-        dataNodes.Nodes[0].cant3 = 30;
-
-        dataNodes.Nodes[1] = new Node();
-        dataNodes.Nodes[1].id = "N002";
-        dataNodes.Nodes[1].rawMaterial1 = "aluminium";
-        dataNodes.Nodes[1].rawMaterial2 = "iron";
-        dataNodes.Nodes[1].rawMaterial3 = "copper";
-        dataNodes.Nodes[1].cant1 = 40;
-        dataNodes.Nodes[1].cant1 = 50;
-        dataNodes.Nodes[1].cant1 = 60;
-        XMLOperator.Serialize(dataNodes, path); //Sube */
-
-        Data = XMLOperator.Deserialize<Data>(path);
+        /*DataMaster = XMLOperator.Deserialize<Data>(path);
         ImprimirDatosDeNodos();
 
-        for (int i = 0; i < Data.Nodes.Length; i++)
+        for (int i = 0; i < DataMaster.Nodes.Length; i++)
         {
-            text.text = text.text + Data.Nodes[i].id + "\n";
-            text.text = text.text + (Data.Nodes[i].rawMaterial1 + " = " + Data.Nodes[i].cant1 + "\n");
-            text.text = text.text + (Data.Nodes[i].rawMaterial2 + " = " + Data.Nodes[i].cant2 + "\n");
-            text.text = text.text + (Data.Nodes[i].rawMaterial3 + " = " + Data.Nodes[i].cant3 + "\n");
+            text.text = text.text + DataMaster.Nodes[i].id + "\n";
+            text.text = text.text + (DataMaster.Nodes[i].rawMaterial1 + " = " + DataMaster.Nodes[i].cant1 + "\n");
+            text.text = text.text + (DataMaster.Nodes[i].rawMaterial2 + " = " + DataMaster.Nodes[i].cant2 + "\n");
+            text.text = text.text + (DataMaster.Nodes[i].rawMaterial3 + " = " + DataMaster.Nodes[i].cant3 + "\n");
             text.text = text.text + ("---\n");
-        }
+        }*/
+
     }
 
     void ImprimirDatosDeNodos()
     {
-        for (int i = 0; i < Data.Nodes.Length; i++)
+        for (int i = 0; i < DataMaster.Nodes.Length; i++)
         {
-            Debug.Log(Data.Nodes[i].id);
-            Debug.Log(Data.Nodes[i].rawMaterial1 + " = " + Data.Nodes[i].cant1);
-            Debug.Log(Data.Nodes[i].rawMaterial2 + " = " + Data.Nodes[i].cant2);
-            Debug.Log(Data.Nodes[i].rawMaterial3 + " = " + Data.Nodes[i].cant3);
+            Debug.Log(DataMaster.Nodes[i].id);
+            Debug.Log(DataMaster.Nodes[i].rawMaterial1 + " = " + DataMaster.Nodes[i].cant1);
+            Debug.Log(DataMaster.Nodes[i].rawMaterial2 + " = " + DataMaster.Nodes[i].cant2);
+            Debug.Log(DataMaster.Nodes[i].rawMaterial3 + " = " + DataMaster.Nodes[i].cant3);
             Debug.Log("---");
         }
     }
 
-    public static void SerializeData()
+    public void SerializeData()
     {
-
+        XMLOperator.Serialize(dataMaster,path);
     }
 
-    public static void DeserializeData()
+    public Data DeserializeData()
     {
-
+        return XMLOperator.Deserialize<Data>(path);
     }
 
 }

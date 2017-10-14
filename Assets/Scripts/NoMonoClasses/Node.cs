@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml.Serialization;
 
 public class Node
@@ -9,7 +8,7 @@ public class Node
     [XmlElement("NodeID")]
     public string id { get; set; }
 
-    //Receta;
+    //Receta para creacion de nodos;
     [XmlElement("RawMaterial1")]
     public string rawMaterial1;
     [XmlElement("RawMaterial2")]
