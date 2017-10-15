@@ -84,8 +84,11 @@
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\AssemblyLine.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\Data.cs" />
+    <Compile Include="Assets\Scripts\NoMonoClasses\Mision.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\Node.cs" />
+    <Compile Include="Assets\Scripts\NoMonoClasses\Robot.cs" />
     <Compile Include="Assets\Scripts\Utilities\Main.cs" />
+    <Compile Include="Assets\Scripts\Utilities\MisionTable.cs" />
     <Compile Include="Assets\Scripts\Utilities\MonoBehaviourScriptSingleton.cs" />
     <Compile Include="Assets\Scripts\Utilities\XMLOperator.cs" />
   </ItemGroup>

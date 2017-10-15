@@ -22,5 +22,18 @@ public class AssemblyLine{
 
     }
 
+    public void Assembly(string nodeID, Node node)
+    {
+        if (AssemblyLineNodes.Count <= LineSize)
+        {
+            AddNode(nodeID, node);
+        }
+    }
+
+    private void AddNode(string nodeID, Node node)
+    {
+        AssemblyLineNodes.Add(nodeID, node);
+    }
+
 
 }

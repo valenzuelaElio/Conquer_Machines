@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviourSingleton<GameManager> {
 
-	void Start () {
-		
+
+    void Start () {
+
 	}
 	
 	void Update () {
-		
+        switch (GameState.Instance.LastScene)
+        {
+            case "BattleList":
+
+                break;
+        }
 	}
 
     public void NavigateScene(string sceneName)
