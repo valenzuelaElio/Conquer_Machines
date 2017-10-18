@@ -78,6 +78,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GameInEditor.cs" />
+    <Compile Include="Assets\MisionInfoPanel.cs" />
+    <Compile Include="Assets\MisionTemplate.cs" />
     <Compile Include="Assets\Scripts\GameStates\GameState.cs" />
     <Compile Include="Assets\Scripts\GameStates\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Managers\DataManager.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Assets\Scripts\NoMonoClasses\Mision.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\Node.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\Robot.cs" />
+    <Compile Include="Assets\Scripts\RobotInfoPanel.cs" />
     <Compile Include="Assets\Scripts\Utilities\Main.cs" />
     <Compile Include="Assets\Scripts\Utilities\MisionTable.cs" />
     <Compile Include="Assets\Scripts\Utilities\MonoBehaviourScriptSingleton.cs" />

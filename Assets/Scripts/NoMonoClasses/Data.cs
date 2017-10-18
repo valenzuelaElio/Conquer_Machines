@@ -33,7 +33,7 @@ public class Data
         ScenesNames = new string[2];
         AssemblyLines = new AssemblyLine[2];
         Robots = new Robot[2];
-        Misions = new Mision[2];
+        Misions = new Mision[5];
 
     }
 }

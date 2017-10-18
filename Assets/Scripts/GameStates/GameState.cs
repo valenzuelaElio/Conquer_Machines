@@ -8,13 +8,13 @@ public class GameState {
     //private Data gamedata;
     private static GameState gameState;
     private PlayerState playerState;
-    private DataManager dataManager;
+    private Data gameData;
     private string lastScene;
 
     //public Data GameData { get { return gamedata; } set { gamedata = value; } }
     public static GameState Instance { get { return gameState; } set { gameState = value; } }
     public PlayerState PlayerStateInstance { get { return playerState; } set { playerState = value; } }
-    public DataManager DataManagerInstance { get { return dataManager; } set { dataManager = value; } }
+    public Data GameData { get { return gameData; } set { gameData = value; } }
     public string LastScene { get { return lastScene; } set { lastScene = value; } }
 
     public enum State
@@ -27,21 +27,21 @@ public class GameState {
     private State actualState;
     public State ActualState { get { return actualState; } set { actualState = value; } }
 
-    public GameState(string XMLpath)
+    public GameState(Data data)
     {
-        dataManager = new DataManager(XMLpath); // Se crea un nuevo DataManager
+        gameData = data;
         Start();
     }
 
-    public static void CreateGame(string XMLpath)
+    public static void CreateGame(Data data)
     {
-        gameState = new GameState(XMLpath);
+        gameState = new GameState(data);
 
     }
 
     public void Start()
     {
-        LoadScene(dataManager.DataMaster.ScenesNames[1]);
+        LoadScene(GameData.ScenesNames[1]);
     }
 
     public void LoadScene(string sceneName)

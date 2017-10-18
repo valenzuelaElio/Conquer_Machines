@@ -35,12 +35,14 @@
   <Robots>
     <Robot>
       <RobotID>R001</RobotID>
+      <Description>lorem ipsum : 80</Description>
       <Durability>100</Durability>
       <Life>50</Life>
       <EnergyCost>20</EnergyCost>
     </Robot>
     <Robot>
       <RobotID>R002</RobotID>
+      <Description>lorem ipsum : 80</Description>
       <Durability>120</Durability>
       <Life>70</Life>
       <EnergyCost>40</EnergyCost>
@@ -61,6 +63,27 @@
     <Mision>
       <MisionID>M002</MisionID>
       <Requirements>M001</Requirements>
+      <Dificulty>1</Dificulty>
+      <Description>Lorem Ipsum : 100</Description>
+      <Status>Not Completed</Status>
+    </Mision>
+    <Mision>
+      <MisionID>M003</MisionID>
+      <Requirements>M002</Requirements>
+      <Dificulty>1</Dificulty>
+      <Description>Lorem Ipsum : 100</Description>
+      <Status>Not Completed</Status>
+    </Mision>
+    <Mision>
+      <MisionID>M004</MisionID>
+      <Requirements>M003</Requirements>
+      <Dificulty>1</Dificulty>
+      <Description>Lorem Ipsum : 100</Description>
+      <Status>Not Completed</Status>
+    </Mision>
+    <Mision>
+      <MisionID>M004</MisionID>
+      <Requirements>M003</Requirements>
       <Dificulty>1</Dificulty>
       <Description>Lorem Ipsum : 100</Description>
       <Status>Not Completed</Status>

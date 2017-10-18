@@ -7,6 +7,11 @@ public class Main : MonoBehaviour {
 
     public void StartGame()
     {
-        GameState.CreateGame(path);
+        GameState.CreateGame(DataManager.DataMaster);
+    }
+
+    void Awake()
+    {
+        DataManager.CreateDataMapExample(path);
     }
 }

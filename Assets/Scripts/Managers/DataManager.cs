@@ -6,13 +6,13 @@ using UnityEngine;
 using System.Xml.Serialization;
 using UnityEngine.UI;
 
-public class DataManager{
+public static class DataManager{
 
-    private Data dataMaster;
-    public Data DataMaster { get { return dataMaster; } set { dataMaster = value; } }
+    private static Data dataMaster;
+    public static Data DataMaster { get { return dataMaster; } set { dataMaster = value; } }
     private static string path = "Assets/DataFolder/test001Xml.xml";
 
-    public DataManager(string XMLpath)
+    public static void CreateDataMapExample(string XMLpath)
     {
         path = XMLpath;
         dataMaster = new Data();
@@ -53,12 +53,14 @@ public class DataManager{
 
         dataMaster.Robots[0] = new Robot();
         dataMaster.Robots[0].RobotID = "R001";
+        dataMaster.Robots[0].Description = "lorem ipsum : 80";
         dataMaster.Robots[0].LifePoints = 50;
         dataMaster.Robots[0].Durability = 100;
         dataMaster.Robots[0].EnergyCost = 20;
 
         dataMaster.Robots[1] = new Robot();
         dataMaster.Robots[1].RobotID = "R002";
+        dataMaster.Robots[1].Description = "lorem ipsum : 80";
         dataMaster.Robots[1].LifePoints = 70;
         dataMaster.Robots[1].Durability = 120;
         dataMaster.Robots[1].EnergyCost = 40;
@@ -77,6 +79,26 @@ public class DataManager{
         dataMaster.Misions[1].Description = "Lorem Ipsum : 100";
         dataMaster.Misions[1].Status = "Not Completed";
 
+        dataMaster.Misions[2] = new Mision();
+        dataMaster.Misions[2].Id = "M003";
+        dataMaster.Misions[2].Dificulty = 1;
+        dataMaster.Misions[2].Requirements = "M002";
+        dataMaster.Misions[2].Description = "Lorem Ipsum : 100";
+        dataMaster.Misions[2].Status = "Not Completed";
+
+        dataMaster.Misions[3] = new Mision();
+        dataMaster.Misions[3].Id = "M004";
+        dataMaster.Misions[3].Dificulty = 1;
+        dataMaster.Misions[3].Requirements = "M003";
+        dataMaster.Misions[3].Description = "Lorem Ipsum : 100";
+        dataMaster.Misions[3].Status = "Not Completed";
+
+        dataMaster.Misions[4] = new Mision();
+        dataMaster.Misions[4].Id = "M004";
+        dataMaster.Misions[4].Dificulty = 1;
+        dataMaster.Misions[4].Requirements = "M003";
+        dataMaster.Misions[4].Description = "Lorem Ipsum : 100";
+        dataMaster.Misions[4].Status = "Not Completed";
 
 
         SerializeData();
@@ -84,7 +106,7 @@ public class DataManager{
 
     }
 
-    void Start () {
+    static void Start () {
 
         //XMLOperator.Serialize(dataMaster, path);
 
@@ -102,7 +124,7 @@ public class DataManager{
 
     }
 
-    void ImprimirDatosDeNodos()
+    static void ImprimirDatosDeNodos()
     {
         for (int i = 0; i < DataMaster.Nodes.Length; i++)
         {
@@ -114,12 +136,12 @@ public class DataManager{
         }
     }
 
-    public void SerializeData()
+    static public void SerializeData()
     {
         XMLOperator.Serialize(dataMaster,path);
     }
 
-    public Data DeserializeData()
+    static public Data DeserializeData()
     {
         return XMLOperator.Deserialize<Data>(path);
     }

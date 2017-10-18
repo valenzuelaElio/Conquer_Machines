@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviourSingleton<GameManager> {
 
-
     void Start () {
 
 	}
@@ -13,9 +12,23 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
 	void Update () {
         switch (GameState.Instance.LastScene)
         {
-            case "BattleList":
+            case "AssemblyLinesScene":
+                GameObject.Find("Button_AssemblyLines").GetComponent<Button>().interactable = false;
 
                 break;
+            case "Extractions":
+                GameObject.Find("Button_Extractions").GetComponent<Button>().interactable = false;
+
+                break;
+            case "BattleList":
+                GameObject.Find("Button_BattleList").GetComponent<Button>().interactable = false;
+
+                break;
+            case "RobotInventory":
+                GameObject.Find("Button_RobotInventory").GetComponent<Button>().interactable = false;
+
+                break;
+
         }
 	}
 
@@ -29,7 +42,17 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
             case "BattleList": GameState.Instance.LoadScene(sceneName); break;
         }
 
-        Debug.Log("Escena : " + sceneName);
+        //Debug.Log("Escena : " + sceneName);
+    }
+
+    public void CreateNode(GameObject createNodePanel)
+    {
+        createNodePanel.SetActive(true);
+    }
+
+    public void CancelCreation()
+    {
+        GameObject.Find("CreateNodePanel").SetActive(false);
     }
 
 }
