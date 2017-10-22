@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/BattleList.unity
+- path: Assets/Scenes/BattlePreparation.unity
   isLoaded: 1
   isActive: 1

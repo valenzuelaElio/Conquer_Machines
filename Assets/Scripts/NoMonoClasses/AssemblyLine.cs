@@ -15,16 +15,18 @@ public class AssemblyLine{
     public int LineSize { get { return AssemblyLineNodesId.Length; } }
 
     [XmlIgnore]
-    private Dictionary<string, Node> AssemblyLineNodes;
+    private Dictionary<string, Node> assemblyLineNodes;
+    [XmlIgnore]
+    public Dictionary<string, Node> AssemblyLineNodes {  get { return assemblyLineNodes; } }
 
     public AssemblyLine()
     {
-
+        assemblyLineNodes = new Dictionary<string, Node>();
     }
 
     public void Assembly(string nodeID, Node node)
     {
-        if (AssemblyLineNodes.Count <= LineSize)
+        if (assemblyLineNodes.Count <= LineSize)
         {
             AddNode(nodeID, node);
         }
@@ -32,7 +34,7 @@ public class AssemblyLine{
 
     private void AddNode(string nodeID, Node node)
     {
-        AssemblyLineNodes.Add(nodeID, node);
+        assemblyLineNodes.Add(nodeID, node);
     }
 
 

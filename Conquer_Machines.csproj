@@ -78,19 +78,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameInEditor.cs" />
-    <Compile Include="Assets\MisionInfoPanel.cs" />
-    <Compile Include="Assets\MisionTemplate.cs" />
+    <Compile Include="Assets\AssemblyLinesPanel.cs" />
+    <Compile Include="Assets\AssemlbyLineTemplate.cs" />
+    <Compile Include="Assets\Scripts\Extractors\ExtractionPanelInfo.cs" />
+    <Compile Include="Assets\Scripts\Extractors\ExtractorPanel.cs" />
+    <Compile Include="Assets\Scripts\Extractors\ExtractorTemplate.cs" />
     <Compile Include="Assets\Scripts\GameStates\GameState.cs" />
     <Compile Include="Assets\Scripts\GameStates\PlayerState.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Inventory\RobotInfoPanel.cs" />
+    <Compile Include="Assets\Scripts\Inventory\RobotTemplate.cs" />
     <Compile Include="Assets\Scripts\Managers\DataManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\MisionTable\MisionInfoPanel.cs" />
+    <Compile Include="Assets\Scripts\MisionTable\MisionTemplate.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\AssemblyLine.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\Data.cs" />
+    <Compile Include="Assets\Scripts\NoMonoClasses\Extractor.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\Mision.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\Node.cs" />
+    <Compile Include="Assets\Scripts\NoMonoClasses\RawMaterial.cs" />
     <Compile Include="Assets\Scripts\NoMonoClasses\Robot.cs" />
-    <Compile Include="Assets\Scripts\RobotInfoPanel.cs" />
+    <Compile Include="Assets\Scripts\Utilities\GameInEditor.cs" />
     <Compile Include="Assets\Scripts\Utilities\Main.cs" />
     <Compile Include="Assets\Scripts\Utilities\MisionTable.cs" />
     <Compile Include="Assets\Scripts\Utilities\MonoBehaviourScriptSingleton.cs" />

@@ -12,16 +12,14 @@ public class Robot{
     public string Description { get; set; }
 
     //Robot Stats;
-    [XmlElement("Durability")]
-    public float Durability { get; set; }
+    [XmlElement("Probability_Of_Breaking")]
+    public float ProbBreaking { get; set; }
 
     [XmlElement("Life")]
     public int LifePoints { get; set; }
 
     [XmlElement("EnergyCost")]
     public int EnergyCost { get; set; }
-
-    
 
     public Robot()
     {

@@ -27,13 +27,23 @@ public class Data
     [XmlArrayItem("Mision", typeof(Mision))]
     public Mision[] Misions { get; set; }
 
+    [XmlArray("Extractors")]
+    [XmlArrayItem("Extractor", typeof(Extractor))]
+    public Extractor[] Extractors { get; set; }
+
+    [XmlArray("RawMaterial")]
+    [XmlArrayItem("RawMaterial", typeof(RawMaterial))]
+    public RawMaterial[] RawMaterials { get; set; }
+
     public Data()
     {
         Nodes = new Node[2];
         ScenesNames = new string[2];
         AssemblyLines = new AssemblyLine[2];
-        Robots = new Robot[2];
+        Robots = new Robot[8];
         Misions = new Mision[5];
+        Extractors = new Extractor[2];
+        RawMaterials = new RawMaterial[2];
 
     }
 }

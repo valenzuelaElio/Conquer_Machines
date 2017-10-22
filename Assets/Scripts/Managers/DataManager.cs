@@ -55,15 +55,57 @@ public static class DataManager{
         dataMaster.Robots[0].RobotID = "R001";
         dataMaster.Robots[0].Description = "lorem ipsum : 80";
         dataMaster.Robots[0].LifePoints = 50;
-        dataMaster.Robots[0].Durability = 100;
+        dataMaster.Robots[0].ProbBreaking = 100;
         dataMaster.Robots[0].EnergyCost = 20;
 
         dataMaster.Robots[1] = new Robot();
         dataMaster.Robots[1].RobotID = "R002";
         dataMaster.Robots[1].Description = "lorem ipsum : 80";
         dataMaster.Robots[1].LifePoints = 70;
-        dataMaster.Robots[1].Durability = 120;
+        dataMaster.Robots[1].ProbBreaking = 120;
         dataMaster.Robots[1].EnergyCost = 40;
+
+        dataMaster.Robots[2] = new Robot();
+        dataMaster.Robots[2].RobotID = "R001";
+        dataMaster.Robots[2].Description = "lorem ipsum : 80";
+        dataMaster.Robots[2].LifePoints = 50;
+        dataMaster.Robots[2].ProbBreaking = 100;
+        dataMaster.Robots[2].EnergyCost = 20;
+
+        dataMaster.Robots[3] = new Robot();
+        dataMaster.Robots[3].RobotID = "R002";
+        dataMaster.Robots[3].Description = "lorem ipsum : 80";
+        dataMaster.Robots[3].LifePoints = 70;
+        dataMaster.Robots[3].ProbBreaking = 120;
+        dataMaster.Robots[3].EnergyCost = 40;
+
+        dataMaster.Robots[4] = new Robot();
+        dataMaster.Robots[4].RobotID = "R001";
+        dataMaster.Robots[4].Description = "lorem ipsum : 80";
+        dataMaster.Robots[4].LifePoints = 50;
+        dataMaster.Robots[4].ProbBreaking = 100;
+        dataMaster.Robots[4].EnergyCost = 20;
+
+        dataMaster.Robots[5] = new Robot();
+        dataMaster.Robots[5].RobotID = "R002";
+        dataMaster.Robots[5].Description = "lorem ipsum : 80";
+        dataMaster.Robots[5].LifePoints = 70;
+        dataMaster.Robots[5].ProbBreaking = 120;
+        dataMaster.Robots[5].EnergyCost = 40;
+
+        dataMaster.Robots[6] = new Robot();
+        dataMaster.Robots[6].RobotID = "R001";
+        dataMaster.Robots[6].Description = "lorem ipsum : 80";
+        dataMaster.Robots[6].LifePoints = 50;
+        dataMaster.Robots[6].ProbBreaking = 100;
+        dataMaster.Robots[6].EnergyCost = 20;
+
+        dataMaster.Robots[7] = new Robot();
+        dataMaster.Robots[7].RobotID = "R002";
+        dataMaster.Robots[7].Description = "lorem ipsum : 80";
+        dataMaster.Robots[7].LifePoints = 70;
+        dataMaster.Robots[7].ProbBreaking = 120;
+        dataMaster.Robots[7].EnergyCost = 40;
 
         dataMaster.Misions[0] = new Mision();
         dataMaster.Misions[0].Id = "M001";
@@ -100,10 +142,33 @@ public static class DataManager{
         dataMaster.Misions[4].Description = "Lorem Ipsum : 100";
         dataMaster.Misions[4].Status = "Not Completed";
 
+        dataMaster.RawMaterials[0] = new RawMaterial();
+        dataMaster.RawMaterials[0].RawMaterialID = "E001";
+        dataMaster.RawMaterials[0].RawMaterialName = "Copper";
+        dataMaster.RawMaterials[0].ExtractionTimePerUnit = 10;
+
+        dataMaster.RawMaterials[1] = new RawMaterial();
+        dataMaster.RawMaterials[1].RawMaterialID = "E002";
+        dataMaster.RawMaterials[1].RawMaterialName = "Iron";
+        dataMaster.RawMaterials[1].ExtractionTimePerUnit = 5;
+
+        dataMaster.Extractors[0] = new Extractor();
+        dataMaster.Extractors[0].Id = "E001";
+        dataMaster.Extractors[0].RobotID = "R001";
+        dataMaster.Extractors[0].RawMaterialID = "RM001";
+        dataMaster.Extractors[0].RawMaterialCant = 0;
+        dataMaster.Extractors[0].RobotCant = 10;
+
+        dataMaster.Extractors[1] = new Extractor();
+        dataMaster.Extractors[1].Id = "E002";
+        dataMaster.Extractors[1].RobotID = "R001";
+        dataMaster.Extractors[1].RawMaterialID = "RM002";
+        dataMaster.Extractors[1].RawMaterialCant = 0;
+        dataMaster.Extractors[1].RobotCant = 0;
 
         SerializeData();
 
-
+        LoadAssemblyLines();
     }
 
     static void Start () {
@@ -146,4 +211,23 @@ public static class DataManager{
         return XMLOperator.Deserialize<Data>(path);
     }
 
+
+    private static void LoadAssemblyLines()
+    {
+        Node[] nodes = dataMaster.Nodes;
+        AssemblyLine[] assemblyLines = dataMaster.AssemblyLines;
+        foreach (AssemblyLine assemblyLine in assemblyLines)
+        {
+            for (int i = 0; i < assemblyLine.AssemblyLineNodesId.Length; i++) {
+                string assemblyLineNodeId = assemblyLine.AssemblyLineNodesId[i];
+                foreach (Node node in nodes)
+                {
+                    if (node.id.Equals(assemblyLineNodeId))
+                    {
+                        assemblyLine.Assembly(node.id, node);
+                    }
+                }
+            }
+        }
+    }
 }
