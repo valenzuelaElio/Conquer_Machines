@@ -10,12 +10,13 @@ public static class DataManager{
 
     private static Data dataMaster;
     public static Data DataMaster { get { return dataMaster; } set { dataMaster = value; } }
-    private static string path = "Assets/DataFolder/test001Xml.xml";
+    private static string path;
 
     public static void CreateDataMapExample(string XMLpath)
     {
         path = XMLpath;
-        dataMaster = new Data();
+
+        /*dataMaster = new Data();
 
         dataMaster.Nodes[0] = new Node();
         dataMaster.Nodes[0].id = "N001";
@@ -50,6 +51,18 @@ public static class DataManager{
         dataMaster.AssemblyLines[1].AssemblyLineNodesId = new string[2];
         dataMaster.AssemblyLines[1].AssemblyLineNodesId[0] = "N003";
         dataMaster.AssemblyLines[1].AssemblyLineNodesId[1] = "N004";
+
+        dataMaster.AssemblyLines[1] = new AssemblyLine();
+        dataMaster.AssemblyLines[1].Id = "L003";
+        dataMaster.AssemblyLines[1].AssemblyLineNodesId = new string[2];
+        dataMaster.AssemblyLines[1].AssemblyLineNodesId[0] = "N005";
+        dataMaster.AssemblyLines[1].AssemblyLineNodesId[1] = "N006";
+
+        dataMaster.AssemblyLines[1] = new AssemblyLine();
+        dataMaster.AssemblyLines[1].Id = "L004";
+        dataMaster.AssemblyLines[1].AssemblyLineNodesId = new string[2];
+        dataMaster.AssemblyLines[1].AssemblyLineNodesId[0] = "N007";
+        dataMaster.AssemblyLines[1].AssemblyLineNodesId[1] = "N008";
 
         dataMaster.Robots[0] = new Robot();
         dataMaster.Robots[0].RobotID = "R001";
@@ -166,9 +179,12 @@ public static class DataManager{
         dataMaster.Extractors[1].RawMaterialCant = 0;
         dataMaster.Extractors[1].RobotCant = 0;
 
-        SerializeData();
+        SerializeData();*/
+        
+        dataMaster = DeserializeData();
 
         LoadAssemblyLines();
+        
     }
 
     static void Start () {

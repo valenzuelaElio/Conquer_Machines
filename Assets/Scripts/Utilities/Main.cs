@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Main : MonoBehaviour {
-    private static string path = "Assets/DataFolder/test001Xml.xml";
+    private static string path = "test001Xml";
 
     public void StartGame()
     {

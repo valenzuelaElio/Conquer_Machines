@@ -39,7 +39,7 @@ public class Data
     {
         Nodes = new Node[2];
         ScenesNames = new string[2];
-        AssemblyLines = new AssemblyLine[2];
+        AssemblyLines = new AssemblyLine[4];
         Robots = new Robot[8];
         Misions = new Mision[5];
         Extractors = new Extractor[2];

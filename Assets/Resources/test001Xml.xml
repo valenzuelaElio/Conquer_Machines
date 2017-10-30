@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataPool xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Nodes>
+    <Node>
+      <RawMaterial1>iron</RawMaterial1>
+      <RawMaterial2>copper</RawMaterial2>
+      <RawMaterial3>aluminium</RawMaterial3>
+      <Quantity1>10</Quantity1>
+      <Quantity2>20</Quantity2>
+      <Quantity3>30</Quantity3>
+      <NodeID>N001</NodeID>
+    </Node>
+    <Node>
+      <RawMaterial1>aluminium</RawMaterial1>
+      <RawMaterial2>iron</RawMaterial2>
+      <RawMaterial3>copper</RawMaterial3>
+      <Quantity1>60</Quantity1>
+      <Quantity2>0</Quantity2>
+      <Quantity3>0</Quantity3>
+      <NodeID>N002</NodeID>
+    </Node>
+  </Nodes>
+  <AssemblyLines>
+    <AssemblyLine>
+      <AssemblyLineNodes>N001</AssemblyLineNodes>
+      <AssemblyLineNodes>N002</AssemblyLineNodes>
+      <AssemblyLineID>L001</AssemblyLineID>
+    </AssemblyLine>
+    <AssemblyLine>
+      <AssemblyLineNodes>N003</AssemblyLineNodes>
+      <AssemblyLineNodes>N004</AssemblyLineNodes>
+      <AssemblyLineID>L002</AssemblyLineID>
+    </AssemblyLine>
+  </AssemblyLines>
+  <Robots>
+    <Robot>
+      <RobotID>R001</RobotID>
+      <Description>lorem ipsum : 80</Description>
+      <Probability_Of_Breaking>100</Probability_Of_Breaking>
+      <Life>50</Life>
+      <EnergyCost>20</EnergyCost>
+    </Robot>
+    <Robot>
+      <RobotID>R002</RobotID>
+      <Description>lorem ipsum : 80</Description>
+      <Probability_Of_Breaking>120</Probability_Of_Breaking>
+      <Life>70</Life>
+      <EnergyCost>40</EnergyCost>
+    </Robot>
+    <Robot>
+      <RobotID>R001</RobotID>
+      <Description>lorem ipsum : 80</Description>
+      <Probability_Of_Breaking>100</Probability_Of_Breaking>
+      <Life>50</Life>
+      <EnergyCost>20</EnergyCost>
+    </Robot>
+    <Robot>
+      <RobotID>R002</RobotID>
+      <Description>lorem ipsum : 80</Description>
+      <Probability_Of_Breaking>120</Probability_Of_Breaking>
+      <Life>70</Life>
+      <EnergyCost>40</EnergyCost>
+    </Robot>
+    <Robot>
+      <RobotID>R001</RobotID>
+      <Description>lorem ipsum : 80</Description>
+      <Probability_Of_Breaking>100</Probability_Of_Breaking>
+      <Life>50</Life>
+      <EnergyCost>20</EnergyCost>
+    </Robot>
+    <Robot>
+      <RobotID>R002</RobotID>
+      <Description>lorem ipsum : 80</Description>
+      <Probability_Of_Breaking>120</Probability_Of_Breaking>
+      <Life>70</Life>
+      <EnergyCost>40</EnergyCost>
+    </Robot>
+    <Robot>
+      <RobotID>R001</RobotID>
+      <Description>lorem ipsum : 80</Description>
+      <Probability_Of_Breaking>100</Probability_Of_Breaking>
+      <Life>50</Life>
+      <EnergyCost>20</EnergyCost>
+    </Robot>
+    <Robot>
+      <RobotID>R002</RobotID>
+      <Description>lorem ipsum : 80</Description>
+      <Probability_Of_Breaking>120</Probability_Of_Breaking>
+      <Life>70</Life>
+      <EnergyCost>40</EnergyCost>
+    </Robot>
+  </Robots>
+  <ScenesNames>
+    <SceneName>Main</SceneName>
+    <SceneName>AssemblyLinesScene</SceneName>
+  </ScenesNames>
+  <Misions>
+    <Mision>
+      <MisionID>M001</MisionID>
+      <Requirements>None</Requirements>
+      <Dificulty>1</Dificulty>
+      <Description>Lorem Ipsum : 100</Description>
+      <Status>Not Completed</Status>
+    </Mision>
+    <Mision>
+      <MisionID>M002</MisionID>
+      <Requirements>M001</Requirements>
+      <Dificulty>1</Dificulty>
+      <Description>Lorem Ipsum : 100</Description>
+      <Status>Not Completed</Status>
+    </Mision>
+    <Mision>
+      <MisionID>M003</MisionID>
+      <Requirements>M002</Requirements>
+      <Dificulty>1</Dificulty>
+      <Description>Lorem Ipsum : 100</Description>
+      <Status>Not Completed</Status>
+    </Mision>
+    <Mision>
+      <MisionID>M004</MisionID>
+      <Requirements>M003</Requirements>
+      <Dificulty>1</Dificulty>
+      <Description>Lorem Ipsum : 100</Description>
+      <Status>Not Completed</Status>
+    </Mision>
+    <Mision>
+      <MisionID>M004</MisionID>
+      <Requirements>M003</Requirements>
+      <Dificulty>1</Dificulty>
+      <Description>Lorem Ipsum : 100</Description>
+      <Status>Not Completed</Status>
+    </Mision>
+  </Misions>
+  <Extractors>
+    <Extractor>
+      <ExtractorID>E001</ExtractorID>
+      <RobotID>R001</RobotID>
+      <RawMaterialID>RM001</RawMaterialID>
+      <RawMaterialCant>0</RawMaterialCant>
+      <RobotCant>10</RobotCant>
+    </Extractor>
+    <Extractor>
+      <ExtractorID>E002</ExtractorID>
+      <RobotID>R001</RobotID>
+      <RawMaterialID>RM002</RawMaterialID>
+      <RawMaterialCant>0</RawMaterialCant>
+      <RobotCant>0</RobotCant>
+    </Extractor>
+  </Extractors>
+  <RawMaterial>
+    <RawMaterial>
+      <RawMaterialID>E001</RawMaterialID>
+      <RawMaterialName>Copper</RawMaterialName>
+      <ExtractionTimePerUnit>10</ExtractionTimePerUnit>
+    </RawMaterial>
+    <RawMaterial>
+      <RawMaterialID>E002</RawMaterialID>
+      <RawMaterialName>Iron</RawMaterialName>
+      <ExtractionTimePerUnit>5</ExtractionTimePerUnit>
+    </RawMaterial>
+  </RawMaterial>
+</DataPool>

@@ -30,13 +30,19 @@ public class GameState {
     public GameState(Data data)
     {
         gameData = data;
-        Start();
     }
 
     public static void CreateGame(Data data)
     {
         gameState = new GameState(data);
+        gameState.Start();
 
+    }
+
+    public static void CreateBattle()
+    {
+        DataManager.CreateDataMapExample("test001Xml");
+        gameState = new GameState(DataManager.DataMaster);
     }
 
     public void Start()
