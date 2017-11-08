@@ -9,7 +9,7 @@ public class AssemblyLinesPanel : MonoBehaviour {
 
     void Start()
     {
-        allAssemblyLine = GameState.Instance.GameData.AssemblyLines;
+        allAssemblyLine = Game.Instance.GameData.AssemblyLines;
 
         for (int i = 0; i < allAssemblyLine.Length; i++)
         {

@@ -41,7 +41,7 @@ public class RobotInfoPanel : MonoBehaviour {
 
     Robot SearchRobot(string id)
     {
-        Robot[] robotList = GameState.Instance.GameData.Robots;
+        Robot[] robotList = Game.Instance.GameData.Robots;
         foreach (Robot temp in robotList)
         {
             if (temp.RobotID.Equals(id))

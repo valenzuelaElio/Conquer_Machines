@@ -31,14 +31,14 @@ public class Data
     [XmlArrayItem("Extractor", typeof(Extractor))]
     public Extractor[] Extractors { get; set; }
 
-    [XmlArray("RawMaterial")]
+    [XmlArray("RawMaterials")]
     [XmlArrayItem("RawMaterial", typeof(RawMaterial))]
     public RawMaterial[] RawMaterials { get; set; }
 
     public Data()
     {
         Nodes = new Node[2];
-        ScenesNames = new string[2];
+        ScenesNames = new string[10];
         AssemblyLines = new AssemblyLine[4];
         Robots = new Robot[8];
         Misions = new Mision[5];

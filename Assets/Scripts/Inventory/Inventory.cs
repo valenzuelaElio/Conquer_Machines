@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour {
     public GameObject robotIconTemplate;
 
 	void Start () {
-        Allrobots = GameState.Instance.GameData.Robots;
+        Allrobots = Game.Instance.GameData.Robots;
 
         for (int i = 0; i < Allrobots.Length; i++) {
             GameObject robot = Instantiate(robotIconTemplate) as GameObject;

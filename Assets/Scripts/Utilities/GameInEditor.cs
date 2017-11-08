@@ -8,11 +8,11 @@ public class GameInEditor : MonoBehaviour {
 
     void Awake()
     {
-        if (GameState.Instance == null)
+        if (Game.Instance == null)
         {
             string path = "Assets/DataFolder/test001Xml.xml";
             DataManager.CreateDataMapExample(path);
-            GameState.CreateGame(DataManager.DataMaster);
+            Game.CreateGame(DataManager.DataMaster);
         }
         Destroy(this);
     }

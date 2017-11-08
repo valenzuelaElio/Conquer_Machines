@@ -5,18 +5,39 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Main.unity
+  - enabled: 0
+    path: 
     guid: cb9e18aa105605b4988b5608d79f28b3
-  - enabled: 1
-    path: Assets/Scenes/AssemblyLinesScene.unity
+  - enabled: 0
+    path: 
     guid: 29b3d80ce96788f43a1ae6c6c3a71b34
-  - enabled: 1
-    path: Assets/Scenes/RobotInventory.unity
+  - enabled: 0
+    path: 
     guid: 3bdacb8d3bc2e4b42a58862ca99fff39
-  - enabled: 1
-    path: Assets/Scenes/Extractions.unity
+  - enabled: 0
+    path: 
     guid: bf402d6b7eb910042a4e853d449fdd6c
-  - enabled: 1
-    path: Assets/Scenes/BattleList.unity
+  - enabled: 0
+    path: 
     guid: 22ddcd06efef1cb47ae8faf3fd987558
+  - enabled: 1
+    path: Assets/Scenes/CM_0_Main.unity
+    guid: 294a3d7e097b04d4e9d9ef932414c2b4
+  - enabled: 1
+    path: Assets/Scenes/CM_1_AssemblyLines.unity
+    guid: 372c31e6b36953046aabd4ee694c004d
+  - enabled: 1
+    path: Assets/Scenes/CM_2_RobotInventory.unity
+    guid: e0c35e4800dd59f4f95224bec92cdfc8
+  - enabled: 1
+    path: Assets/Scenes/CM_3_Extractions.unity
+    guid: 23bf8342b8cf98c4fbee1e311f8c0c59
+  - enabled: 1
+    path: Assets/Scenes/CM_4_BattleList.unity
+    guid: 8b31deb54fe71c0469c057b7e48cb3cb
+  - enabled: 1
+    path: Assets/Scenes/CM_4.1_BattlePreparation.unity
+    guid: 0240f9a2304560542ab77bc325ff0418
+  - enabled: 1
+    path: Assets/Scenes/CM_4.2_Minigame.unity
+    guid: bfc8737a3b7ab444682ed1f0fdd37ca9

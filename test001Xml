@@ -39,6 +39,8 @@
       <Probability_Of_Breaking>100</Probability_Of_Breaking>
       <Life>50</Life>
       <EnergyCost>20</EnergyCost>
+      <Attack>10</Attack>
+      <AttackSpeed>1</AttackSpeed>
     </Robot>
     <Robot>
       <RobotID>R002</RobotID>
@@ -46,6 +48,8 @@
       <Probability_Of_Breaking>120</Probability_Of_Breaking>
       <Life>70</Life>
       <EnergyCost>40</EnergyCost>
+      <Attack>10</Attack>
+      <AttackSpeed>1</AttackSpeed>
     </Robot>
     <Robot>
       <RobotID>R001</RobotID>
@@ -53,6 +57,8 @@
       <Probability_Of_Breaking>100</Probability_Of_Breaking>
       <Life>50</Life>
       <EnergyCost>20</EnergyCost>
+      <Attack>20</Attack>
+      <AttackSpeed>1</AttackSpeed>
     </Robot>
     <Robot>
       <RobotID>R002</RobotID>
@@ -60,6 +66,8 @@
       <Probability_Of_Breaking>120</Probability_Of_Breaking>
       <Life>70</Life>
       <EnergyCost>40</EnergyCost>
+      <Attack>20</Attack>
+      <AttackSpeed>10</AttackSpeed>
     </Robot>
     <Robot>
       <RobotID>R001</RobotID>
@@ -67,32 +75,17 @@
       <Probability_Of_Breaking>100</Probability_Of_Breaking>
       <Life>50</Life>
       <EnergyCost>20</EnergyCost>
-    </Robot>
-    <Robot>
-      <RobotID>R002</RobotID>
-      <Description>lorem ipsum : 80</Description>
-      <Probability_Of_Breaking>120</Probability_Of_Breaking>
-      <Life>70</Life>
-      <EnergyCost>40</EnergyCost>
-    </Robot>
-    <Robot>
-      <RobotID>R001</RobotID>
-      <Description>lorem ipsum : 80</Description>
-      <Probability_Of_Breaking>100</Probability_Of_Breaking>
-      <Life>50</Life>
-      <EnergyCost>20</EnergyCost>
-    </Robot>
-    <Robot>
-      <RobotID>R002</RobotID>
-      <Description>lorem ipsum : 80</Description>
-      <Probability_Of_Breaking>120</Probability_Of_Breaking>
-      <Life>70</Life>
-      <EnergyCost>40</EnergyCost>
+      <Attack>20</Attack>
+      <AttackSpeed>10</AttackSpeed>
     </Robot>
   </Robots>
   <ScenesNames>
-    <SceneName>Main</SceneName>
-    <SceneName>AssemblyLinesScene</SceneName>
+    <SceneName>CM_1_AssemblyLines</SceneName>
+    <SceneName>CM_2_RobotInventory</SceneName>
+    <SceneName>CM_3_Extractions</SceneName>
+    <SceneName>CM_4_BattleList</SceneName>
+    <SceneName>CM_4.1_BattlePreparation</SceneName>
+    <SceneName>CM_4.2_Minigame</SceneName>
   </ScenesNames>
   <Misions>
     <Mision>
@@ -147,7 +140,7 @@
       <RobotCant>0</RobotCant>
     </Extractor>
   </Extractors>
-  <RawMaterial>
+  <RawMaterials>
     <RawMaterial>
       <RawMaterialID>E001</RawMaterialID>
       <RawMaterialName>Copper</RawMaterialName>
@@ -158,5 +151,5 @@
       <RawMaterialName>Iron</RawMaterialName>
       <ExtractionTimePerUnit>5</ExtractionTimePerUnit>
     </RawMaterial>
-  </RawMaterial>
+  </RawMaterials>
 </DataPool>

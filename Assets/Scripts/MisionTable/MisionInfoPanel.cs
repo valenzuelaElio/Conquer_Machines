@@ -36,7 +36,7 @@ public class MisionInfoPanel : MonoBehaviour {
 
     Mision SearchMission(string id)
     {
-        Mision[] misionList = GameState.Instance.GameData.Misions;
+        Mision[] misionList = Game.Instance.GameData.Misions;
         foreach (Mision temp in misionList)
         {
             if (temp.Id.Equals(id))

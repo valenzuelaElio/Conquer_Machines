@@ -5,44 +5,48 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviourSingleton<GameManager> {
 
-    void Start () {
+    private Game game;
+    public Deck ChoosedDeck { get; set; }
 
+    void Start () {
+        game = Game.Instance;
 	}
 	
 	void Update () {
-        switch (GameState.Instance.LastScene)
+        /*switch (game.ActualState)
         {
-            case "AssemblyLinesScene":
+            case Game.GameState.AssemblyLines:
                 GameObject.Find("Button_AssemblyLines").GetComponent<Button>().interactable = false;
 
                 break;
-            case "Extractions":
+            case "CM_3_Extractions":
                 GameObject.Find("Button_Extractions").GetComponent<Button>().interactable = false;
 
                 break;
-            case "BattleList":
+            case "CM_4_BattleList":
                 GameObject.Find("Button_BattleList").GetComponent<Button>().interactable = false;
 
                 break;
-            case "RobotInventory":
+            case "CM_2_RobotInventory":
                 GameObject.Find("Button_RobotInventory").GetComponent<Button>().interactable = false;
-
                 break;
 
-        }
+        }*/
 	}
 
     public void NavigateScene(string sceneName)
     {
         switch (sceneName)
         {
-            case "AssemblyLinesScene": GameState.Instance.LoadScene(sceneName); break;
-            case "RobotInventory": GameState.Instance.LoadScene(sceneName); break;
-            case "Extractions": GameState.Instance.LoadScene(sceneName); break;
-            case "BattleList": GameState.Instance.LoadScene(sceneName); break;
+            case "CM_1_AssemblyLines": Game.Instance.LoadScene(sceneName); break;
+            case "CM_2_RobotInventory": Game.Instance.LoadScene(sceneName); break;
+            case "CM_3_Extractions": Game.Instance.LoadScene(sceneName); break;
+            case "CM_4_BattleList": Game.Instance.LoadScene(sceneName); break;
+            case "CM_4.1_BattlePreparation": Game.Instance.LoadScene(sceneName); break;
+            case "CM_4.2_Minigame": Game.Instance.LoadScene(sceneName); break;
         }
 
-        //Debug.Log("Escena : " + sceneName);
+        Debug.Log("Escena : " + sceneName);
     }
 
     public void CreateNode(GameObject createNodePanel)
@@ -56,3 +60,5 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
     }
 
 }
+
+

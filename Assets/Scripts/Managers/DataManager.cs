@@ -16,8 +16,10 @@ public static class DataManager{
     {
         path = XMLpath;
 
-        /*dataMaster = new Data();
+        dataMaster = new Data();
+        //dataMaster = DeserializeData();
 
+        
         dataMaster.Nodes[0] = new Node();
         dataMaster.Nodes[0].id = "N001";
         dataMaster.Nodes[0].rawMaterial1 = "iron";
@@ -35,10 +37,6 @@ public static class DataManager{
         dataMaster.Nodes[1].cant1 = 40;
         dataMaster.Nodes[1].cant1 = 50;
         dataMaster.Nodes[1].cant1 = 60;
-
-        dataMaster.ScenesNames[0] = "Main";
-        dataMaster.ScenesNames[1] = "AssemblyLinesScene";
-        //dataMaster.ScenesNames[2] = "Extractions";
 
         dataMaster.AssemblyLines[0] = new AssemblyLine();
         dataMaster.AssemblyLines[0].Id = "L001";
@@ -70,6 +68,8 @@ public static class DataManager{
         dataMaster.Robots[0].LifePoints = 50;
         dataMaster.Robots[0].ProbBreaking = 100;
         dataMaster.Robots[0].EnergyCost = 20;
+        dataMaster.Robots[0].Attack = 10;
+        dataMaster.Robots[0].AttackSpeed = 1;
 
         dataMaster.Robots[1] = new Robot();
         dataMaster.Robots[1].RobotID = "R002";
@@ -77,6 +77,8 @@ public static class DataManager{
         dataMaster.Robots[1].LifePoints = 70;
         dataMaster.Robots[1].ProbBreaking = 120;
         dataMaster.Robots[1].EnergyCost = 40;
+        dataMaster.Robots[1].Attack = 10;
+        dataMaster.Robots[1].AttackSpeed = 1;
 
         dataMaster.Robots[2] = new Robot();
         dataMaster.Robots[2].RobotID = "R001";
@@ -84,6 +86,8 @@ public static class DataManager{
         dataMaster.Robots[2].LifePoints = 50;
         dataMaster.Robots[2].ProbBreaking = 100;
         dataMaster.Robots[2].EnergyCost = 20;
+        dataMaster.Robots[2].Attack = 20;
+        dataMaster.Robots[2].AttackSpeed = 1;
 
         dataMaster.Robots[3] = new Robot();
         dataMaster.Robots[3].RobotID = "R002";
@@ -91,6 +95,8 @@ public static class DataManager{
         dataMaster.Robots[3].LifePoints = 70;
         dataMaster.Robots[3].ProbBreaking = 120;
         dataMaster.Robots[3].EnergyCost = 40;
+        dataMaster.Robots[3].Attack = 20;
+        dataMaster.Robots[3].AttackSpeed = 10;
 
         dataMaster.Robots[4] = new Robot();
         dataMaster.Robots[4].RobotID = "R001";
@@ -98,27 +104,8 @@ public static class DataManager{
         dataMaster.Robots[4].LifePoints = 50;
         dataMaster.Robots[4].ProbBreaking = 100;
         dataMaster.Robots[4].EnergyCost = 20;
-
-        dataMaster.Robots[5] = new Robot();
-        dataMaster.Robots[5].RobotID = "R002";
-        dataMaster.Robots[5].Description = "lorem ipsum : 80";
-        dataMaster.Robots[5].LifePoints = 70;
-        dataMaster.Robots[5].ProbBreaking = 120;
-        dataMaster.Robots[5].EnergyCost = 40;
-
-        dataMaster.Robots[6] = new Robot();
-        dataMaster.Robots[6].RobotID = "R001";
-        dataMaster.Robots[6].Description = "lorem ipsum : 80";
-        dataMaster.Robots[6].LifePoints = 50;
-        dataMaster.Robots[6].ProbBreaking = 100;
-        dataMaster.Robots[6].EnergyCost = 20;
-
-        dataMaster.Robots[7] = new Robot();
-        dataMaster.Robots[7].RobotID = "R002";
-        dataMaster.Robots[7].Description = "lorem ipsum : 80";
-        dataMaster.Robots[7].LifePoints = 70;
-        dataMaster.Robots[7].ProbBreaking = 120;
-        dataMaster.Robots[7].EnergyCost = 40;
+        dataMaster.Robots[4].Attack = 20;
+        dataMaster.Robots[4].AttackSpeed = 10;
 
         dataMaster.Misions[0] = new Mision();
         dataMaster.Misions[0].Id = "M001";
@@ -179,8 +166,15 @@ public static class DataManager{
         dataMaster.Extractors[1].RawMaterialCant = 0;
         dataMaster.Extractors[1].RobotCant = 0;
 
-        SerializeData();*/
-        
+        dataMaster.ScenesNames[0] = "CM_1_AssemblyLines";
+        dataMaster.ScenesNames[1] = "CM_2_RobotInventory";
+        dataMaster.ScenesNames[2] = "CM_3_Extractions";
+        dataMaster.ScenesNames[3] = "CM_4_BattleList";
+        dataMaster.ScenesNames[4] = "CM_4.1_BattlePreparation";
+        dataMaster.ScenesNames[5] = "CM_4.2_Minigame";
+
+        SerializeDataOnPC();
+
         dataMaster = DeserializeData();
 
         LoadAssemblyLines();
@@ -221,6 +215,12 @@ public static class DataManager{
     {
         XMLOperator.Serialize(dataMaster,path);
     }
+
+    static public void SerializeDataOnPC()
+    {
+        XMLOperator.SerializeOnPC(dataMaster, path);
+    }
+
 
     static public Data DeserializeData()
     {

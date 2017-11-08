@@ -21,6 +21,15 @@ public class Robot{
     [XmlElement("EnergyCost")]
     public int EnergyCost { get; set; }
 
+    [XmlElement("Attack")]
+    public int Attack { get; set; }
+
+    [XmlElement("AttackSpeed")]
+    public int AttackSpeed { get; set; }
+
+    [XmlIgnore]
+    public float Attack_Speed { get { return (Attack / AttackSpeed) * 1.0f; } }
+
     public Robot()
     {
 

@@ -8,13 +8,14 @@ public class EnemyGenerator : MonoBehaviour {
     public GameObject GridMap;
     private List<GameObject> emptySpaces;
 
-	// Use this for initialization
+    //TODO Una lista de posibles enemigos cargada desde la base de datos;
+
 	void Start () {
 
         Random random = new Random();
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 15; i++)
         {
-            Transform t = GridMap.transform.GetChild(Random.Range(0, 5) * 8); // TODO: Mejorar creacion de enemigos; 
+            Transform t = GridMap.transform.GetChild(i); // TODO: Mejorar creacion de enemigos; 
 
             if (t.childCount == 0)
             {
@@ -25,11 +26,6 @@ public class EnemyGenerator : MonoBehaviour {
 
         }
 
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
 		
 	}
 }

@@ -6,11 +6,11 @@ public class BattleManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frames
-	void Update () {
+
+    }
+
+    // Update is called once per frames
+    void Update () {
 		
 	}
 }

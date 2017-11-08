@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ExtractorTemplate : MonoBehaviour {
+public class ExtractorTemplate : MonoBehaviour{
 
-    public Text id;
+    //Aqui va toda la informacion que sera mostrada en el template creado;
+    public Extractor MyExtractor { get; set; } //Mi informacion;
+    public Text ID;
+    public Text TotalRobots;
+    public Image Robot;
+    public Image RawMaterial;
+    //public ProgressBarBehaviour progressBar;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-}
+    public void ShowData()
+    {
+        ID.text = "" + MyExtractor.Id;
+        TotalRobots.text = "" + MyExtractor.RobotCant; 
+        //Robot.sprite =  Buscar el sprite;
+        //RawMaterial.sprite = Buscar el sprite;
+    }
+
+}   
