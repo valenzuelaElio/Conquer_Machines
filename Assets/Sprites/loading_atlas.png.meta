@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 5b7391411040c4a59b8c81d10c737e41
-timeCreated: 1510175209
+timeCreated: 1510424907
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -81,28 +81,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: loading_atlas_1
-      rect:
-        serializedVersion: 2
-        x: 602
-        y: 1113
-        width: 1326
-        height: 879
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
       name: loading_atlas_2
       rect:
         serializedVersion: 2
-        x: 183
-        y: 1726
+        x: 185
+        y: 1520
         width: 211
         height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -110,12 +97,12 @@ TextureImporter:
       name: loading_atlas_0
       rect:
         serializedVersion: 2
-        x: 568
-        y: 148
-        width: 1341
-        height: 876
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 576
+        y: 40
+        width: 1333
+        height: 1324
+      alignment: 9
+      pivot: {x: 0.58657205, y: 0.674321}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
