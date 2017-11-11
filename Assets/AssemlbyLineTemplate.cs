@@ -14,6 +14,7 @@ public class AssemlbyLineTemplate : MonoBehaviour {
 
     public GameObject RobotResult;
 
+    /*
     void Start () {
 
         switch (assemblyLine.AssemblyLineNodes.Count)
@@ -56,7 +57,7 @@ public class AssemlbyLineTemplate : MonoBehaviour {
         }
 
 	}
-	
+	*/
 	// Update is called once per frame
 	void Update () {
 		

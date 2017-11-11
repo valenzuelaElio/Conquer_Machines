@@ -32,9 +32,9 @@ public class XMLOperator
     public static void SerializeOnPC(object item, string path)
     {
         XmlSerializer serializer = new XmlSerializer(item.GetType());
-        StreamWriter streamWriter = new StreamWriter(path);
-        serializer.Serialize(streamWriter.BaseStream, item);
-        streamWriter.Close();
+        StreamWriter writer = new StreamWriter(path);
+        serializer.Serialize(writer.BaseStream, item);
+        writer.Close();
     }
 
     public static T Deserialize<T>(string path)
@@ -50,6 +50,16 @@ public class XMLOperator
         T deserialized = (T)serializer.Deserialize(stream);
         //reader.Close();
         stream.Close();
+        return deserialized;
+
+    }
+
+    public static T DeserializeOnPC<T>(string path)
+    {
+        XmlSerializer serializer = new XmlSerializer(typeof(T));
+        StreamReader reader = new StreamReader(path);
+        T deserialized = (T)serializer.Deserialize(reader.BaseStream);
+        reader.Close();
         return deserialized;
 
     }

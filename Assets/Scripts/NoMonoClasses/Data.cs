@@ -40,7 +40,7 @@ public class Data
         Nodes = new Node[2];
         ScenesNames = new string[10];
         AssemblyLines = new AssemblyLine[4];
-        Robots = new Robot[8];
+        Robots = new Robot[5];
         Misions = new Mision[5];
         Extractors = new Extractor[2];
         RawMaterials = new RawMaterial[2];

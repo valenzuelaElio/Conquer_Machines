@@ -20,7 +20,8 @@ public class Extractor {
     [XmlElement("RobotCant")]
     public int RobotCant { get; set; }
 
-    RawMaterial extractingMaterial;
+    //[XmlElement("SpriteName")]
+    //public int SpriteName { get; set; }
 
     public Extractor()
     {

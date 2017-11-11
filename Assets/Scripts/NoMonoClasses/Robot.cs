@@ -8,6 +8,9 @@ public class Robot{
     [XmlElement("RobotID")]
     public string RobotID { get; set; }
 
+    [XmlElement("RobotName")]
+    public string RobotName { get; set; }
+
     [XmlElement("Description")]
     public string Description { get; set; }
 

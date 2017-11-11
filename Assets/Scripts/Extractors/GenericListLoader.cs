@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GenericListLoader : MonoBehaviour {
-
-    
     public enum ElementListType
     {
         Extractors,
@@ -24,19 +22,32 @@ public class GenericListLoader : MonoBehaviour {
         Debug.Log("Size = " + GenericList.Length);
         for (int i = 0; i < GenericList.Length; i++)
         {
+            GameObject obj = Instantiate(ItemTemplate) as GameObject;
+            obj.SetActive(true);
+
             //ItemTemplate.GetComponent<GenericTemplate>();
             //obj.GetComponent<>().id.text = GenericList[i].Id;
             switch (elementListType)
             {
-                //case ElementListType.AssemblyLine: break;
+                case ElementListType.AssemblyLine:
+                    obj.GetComponent<AssemlbyLineTemplate>();
+                    break;
+
                 case ElementListType.Extractors:
-                    ItemTemplate.GetComponent<ExtractorTemplate>().MyExtractor = (Extractor)GenericList[i];
-                    Debug.Log(ItemTemplate.GetComponent<ExtractorTemplate>().MyExtractor.Id);
-                    ItemTemplate.GetComponent<ExtractorTemplate>().ShowData();
+                    obj.GetComponent<ExtractorTemplate>().MyExtractor = (Extractor)GenericList[i];
+                    obj.GetComponent<ExtractorTemplate>().ShowData();
+                    break;
+
+                case ElementListType.Misions:
+                    break;
+
+                case ElementListType.Robots:
+                    obj.GetComponent<RobotTemplate>().MyRobot = (Robot)GenericList[i];
+                    obj.GetComponent<RobotTemplate>().ShowData();
+                    Debug.Log(obj.GetComponent<RobotTemplate>().MyRobot.RobotName);
                     break;
             }
-            GameObject obj = Instantiate(ItemTemplate) as GameObject;
-            obj.SetActive(true);
+            
 
             obj.transform.SetParent(ItemTemplate.transform.parent, false);
         }

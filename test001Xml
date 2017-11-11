@@ -35,6 +35,7 @@
   <Robots>
     <Robot>
       <RobotID>R001</RobotID>
+      <RobotName>R-001</RobotName>
       <Description>lorem ipsum : 80</Description>
       <Probability_Of_Breaking>100</Probability_Of_Breaking>
       <Life>50</Life>
@@ -44,6 +45,7 @@
     </Robot>
     <Robot>
       <RobotID>R002</RobotID>
+      <RobotName>R-002</RobotName>
       <Description>lorem ipsum : 80</Description>
       <Probability_Of_Breaking>120</Probability_Of_Breaking>
       <Life>70</Life>
@@ -52,7 +54,8 @@
       <AttackSpeed>1</AttackSpeed>
     </Robot>
     <Robot>
-      <RobotID>R001</RobotID>
+      <RobotID>R003</RobotID>
+      <RobotName>R-004</RobotName>
       <Description>lorem ipsum : 80</Description>
       <Probability_Of_Breaking>100</Probability_Of_Breaking>
       <Life>50</Life>
@@ -61,7 +64,8 @@
       <AttackSpeed>1</AttackSpeed>
     </Robot>
     <Robot>
-      <RobotID>R002</RobotID>
+      <RobotID>R004</RobotID>
+      <RobotName>R-006</RobotName>
       <Description>lorem ipsum : 80</Description>
       <Probability_Of_Breaking>120</Probability_Of_Breaking>
       <Life>70</Life>
@@ -70,7 +74,8 @@
       <AttackSpeed>10</AttackSpeed>
     </Robot>
     <Robot>
-      <RobotID>R001</RobotID>
+      <RobotID>R005</RobotID>
+      <RobotName>R-008</RobotName>
       <Description>lorem ipsum : 80</Description>
       <Probability_Of_Breaking>100</Probability_Of_Breaking>
       <Life>50</Life>
@@ -94,6 +99,7 @@
       <Dificulty>1</Dificulty>
       <Description>Lorem Ipsum : 100</Description>
       <Status>Not Completed</Status>
+      <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
     </Mision>
     <Mision>
       <MisionID>M002</MisionID>
@@ -101,6 +107,7 @@
       <Dificulty>1</Dificulty>
       <Description>Lorem Ipsum : 100</Description>
       <Status>Not Completed</Status>
+      <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
     </Mision>
     <Mision>
       <MisionID>M003</MisionID>
@@ -108,6 +115,7 @@
       <Dificulty>1</Dificulty>
       <Description>Lorem Ipsum : 100</Description>
       <Status>Not Completed</Status>
+      <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
     </Mision>
     <Mision>
       <MisionID>M004</MisionID>
@@ -115,13 +123,7 @@
       <Dificulty>1</Dificulty>
       <Description>Lorem Ipsum : 100</Description>
       <Status>Not Completed</Status>
-    </Mision>
-    <Mision>
-      <MisionID>M004</MisionID>
-      <Requirements>M003</Requirements>
-      <Dificulty>1</Dificulty>
-      <Description>Lorem Ipsum : 100</Description>
-      <Status>Not Completed</Status>
+      <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
     </Mision>
   </Misions>
   <Extractors>
@@ -134,7 +136,7 @@
     </Extractor>
     <Extractor>
       <ExtractorID>E002</ExtractorID>
-      <RobotID>R001</RobotID>
+      <RobotID>R002</RobotID>
       <RawMaterialID>RM002</RawMaterialID>
       <RawMaterialCant>0</RawMaterialCant>
       <RobotCant>0</RobotCant>

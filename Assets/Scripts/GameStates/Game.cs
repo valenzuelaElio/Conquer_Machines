@@ -51,7 +51,7 @@ public class Game {
 
     public void Start()
     {
-        LoadScene(GameData.ScenesNames[1]);
+        LoadScene(GameData.ScenesNames[0]);
     }
 
     public void LoadScene(string sceneName)

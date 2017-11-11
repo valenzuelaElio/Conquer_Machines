@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class Mision {
 
+    public enum Objective
+    {
+        Ob1,Ob2,Ob3,
+    }
+
     [XmlElement("MisionID")]
     public string Id { get; set; }
 
@@ -19,6 +24,9 @@ public class Mision {
 
     [XmlElement("Status")]
     public string Status { get; set; }
+
+    [XmlElement("Mission - Objective")]
+    public Objective MissionObjective { get; set; }
 
     public Mision()
     {

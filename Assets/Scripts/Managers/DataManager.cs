@@ -15,6 +15,7 @@ public static class DataManager{
     public static void CreateDataMapExample(string XMLpath)
     {
         path = XMLpath;
+        System.Random random = new System.Random();
 
         dataMaster = new Data();
         //dataMaster = DeserializeData();
@@ -70,6 +71,7 @@ public static class DataManager{
         dataMaster.Robots[0].EnergyCost = 20;
         dataMaster.Robots[0].Attack = 10;
         dataMaster.Robots[0].AttackSpeed = 1;
+        dataMaster.Robots[0].RobotName = "R-00" + random.Next(0,2);
 
         dataMaster.Robots[1] = new Robot();
         dataMaster.Robots[1].RobotID = "R002";
@@ -79,33 +81,37 @@ public static class DataManager{
         dataMaster.Robots[1].EnergyCost = 40;
         dataMaster.Robots[1].Attack = 10;
         dataMaster.Robots[1].AttackSpeed = 1;
+        dataMaster.Robots[1].RobotName = "R-00" + random.Next(2, 4);
 
         dataMaster.Robots[2] = new Robot();
-        dataMaster.Robots[2].RobotID = "R001";
+        dataMaster.Robots[2].RobotID = "R003";
         dataMaster.Robots[2].Description = "lorem ipsum : 80";
         dataMaster.Robots[2].LifePoints = 50;
         dataMaster.Robots[2].ProbBreaking = 100;
         dataMaster.Robots[2].EnergyCost = 20;
         dataMaster.Robots[2].Attack = 20;
         dataMaster.Robots[2].AttackSpeed = 1;
+        dataMaster.Robots[2].RobotName = "R-00" + random.Next(4, 6);
 
         dataMaster.Robots[3] = new Robot();
-        dataMaster.Robots[3].RobotID = "R002";
+        dataMaster.Robots[3].RobotID = "R004";
         dataMaster.Robots[3].Description = "lorem ipsum : 80";
         dataMaster.Robots[3].LifePoints = 70;
         dataMaster.Robots[3].ProbBreaking = 120;
         dataMaster.Robots[3].EnergyCost = 40;
         dataMaster.Robots[3].Attack = 20;
         dataMaster.Robots[3].AttackSpeed = 10;
+        dataMaster.Robots[3].RobotName = "R-00" + random.Next(6, 8); 
 
         dataMaster.Robots[4] = new Robot();
-        dataMaster.Robots[4].RobotID = "R001";
+        dataMaster.Robots[4].RobotID = "R005";
         dataMaster.Robots[4].Description = "lorem ipsum : 80";
         dataMaster.Robots[4].LifePoints = 50;
         dataMaster.Robots[4].ProbBreaking = 100;
         dataMaster.Robots[4].EnergyCost = 20;
         dataMaster.Robots[4].Attack = 20;
         dataMaster.Robots[4].AttackSpeed = 10;
+        dataMaster.Robots[4].RobotName = "R-00" + random.Next(8, 10);
 
         dataMaster.Misions[0] = new Mision();
         dataMaster.Misions[0].Id = "M001";
@@ -135,13 +141,6 @@ public static class DataManager{
         dataMaster.Misions[3].Description = "Lorem Ipsum : 100";
         dataMaster.Misions[3].Status = "Not Completed";
 
-        dataMaster.Misions[4] = new Mision();
-        dataMaster.Misions[4].Id = "M004";
-        dataMaster.Misions[4].Dificulty = 1;
-        dataMaster.Misions[4].Requirements = "M003";
-        dataMaster.Misions[4].Description = "Lorem Ipsum : 100";
-        dataMaster.Misions[4].Status = "Not Completed";
-
         dataMaster.RawMaterials[0] = new RawMaterial();
         dataMaster.RawMaterials[0].RawMaterialID = "E001";
         dataMaster.RawMaterials[0].RawMaterialName = "Copper";
@@ -161,7 +160,7 @@ public static class DataManager{
 
         dataMaster.Extractors[1] = new Extractor();
         dataMaster.Extractors[1].Id = "E002";
-        dataMaster.Extractors[1].RobotID = "R001";
+        dataMaster.Extractors[1].RobotID = "R002";
         dataMaster.Extractors[1].RawMaterialID = "RM002";
         dataMaster.Extractors[1].RawMaterialCant = 0;
         dataMaster.Extractors[1].RobotCant = 0;
@@ -175,9 +174,9 @@ public static class DataManager{
 
         SerializeDataOnPC();
 
-        dataMaster = DeserializeData();
+        //dataMaster = DeserializeDataOPc();
 
-        LoadAssemblyLines();
+        //LoadAssemblyLines();
         
     }
 
@@ -221,6 +220,10 @@ public static class DataManager{
         XMLOperator.SerializeOnPC(dataMaster, path);
     }
 
+    static public Data DeserializeDataOPc()
+    {
+        return XMLOperator.Deserialize<Data>(path);
+    }
 
     static public Data DeserializeData()
     {

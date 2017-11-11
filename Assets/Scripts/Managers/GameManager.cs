@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
                 break;
 
         }*/
+
 	}
 
     public void NavigateScene(string sceneName)

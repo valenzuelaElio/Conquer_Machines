@@ -62,8 +62,9 @@ public class Enemy : MonoBehaviour {
 
                 if (lifePoints <= 0)
                 {
-                    rayHit.collider.GetComponent<RobotGo>().isAttacking = false; ;
+                    rayHit.collider.GetComponent<RobotGo>().isAttacking = false;
                     Destroy(gameObject);
+                    EnemyGenerator.Instance.CheckMap();
                 }
             }
 

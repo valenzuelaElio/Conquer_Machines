@@ -58,6 +58,11 @@ public class RobotGo : MonoBehaviour {
             isAttacking = false;
         }
 
+        if(firstEnemyOnLine == null)
+        {
+            myState = RobotState.Walking;
+        }
+
 
 	}
 

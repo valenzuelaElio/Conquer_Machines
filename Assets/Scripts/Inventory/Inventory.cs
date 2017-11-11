@@ -19,8 +19,4 @@ public class Inventory : MonoBehaviour {
             robot.transform.SetParent(robotIconTemplate.transform.parent, false);
         }
 	}
-	
-	void Update () {
-		
-	}
 }

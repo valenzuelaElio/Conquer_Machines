@@ -13,7 +13,7 @@ public class RobotDeck : MonoBehaviour {
 
     void Start()
     {
-        //Game.CreateBattle();
+        Game.CreateBattle();
         Allrobots = GameManager.Instance.ChoosedDeck.RobotList;
         //currentSelectedRobot = Allrobots[0]; // Por mientras el robot escogido siepmre sera el primero
         for (int i = 0; i < Allrobots.Length; i++)
