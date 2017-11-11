@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/CM_0_Main.unity
+- path: Assets/Scenes/CM_4.1_BattlePreparation.unity
   isLoaded: 1
   isActive: 1

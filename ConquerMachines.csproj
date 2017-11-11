@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\AssemblyLinesPanel.cs" />
     <Compile Include="Assets\AssemlbyLineTemplate.cs" />
+    <Compile Include="Assets\Battlefield.cs" />
     <Compile Include="Assets\Destroyer.cs" />
     <Compile Include="Assets\DontDestroy.cs" />
     <Compile Include="Assets\Enemy.cs" />

@@ -19,7 +19,6 @@ public static class DataManager{
 
         dataMaster = new Data();
         //dataMaster = DeserializeData();
-
         
         dataMaster.Nodes[0] = new Node();
         dataMaster.Nodes[0].id = "N001";
@@ -51,17 +50,17 @@ public static class DataManager{
         dataMaster.AssemblyLines[1].AssemblyLineNodesId[0] = "N003";
         dataMaster.AssemblyLines[1].AssemblyLineNodesId[1] = "N004";
 
-        dataMaster.AssemblyLines[1] = new AssemblyLine();
-        dataMaster.AssemblyLines[1].Id = "L003";
-        dataMaster.AssemblyLines[1].AssemblyLineNodesId = new string[2];
-        dataMaster.AssemblyLines[1].AssemblyLineNodesId[0] = "N005";
-        dataMaster.AssemblyLines[1].AssemblyLineNodesId[1] = "N006";
+        dataMaster.AssemblyLines[2] = new AssemblyLine();
+        dataMaster.AssemblyLines[2].Id = "L003";
+        dataMaster.AssemblyLines[2].AssemblyLineNodesId = new string[2];
+        dataMaster.AssemblyLines[2].AssemblyLineNodesId[0] = "N005";
+        dataMaster.AssemblyLines[2].AssemblyLineNodesId[1] = "N006";
 
-        dataMaster.AssemblyLines[1] = new AssemblyLine();
-        dataMaster.AssemblyLines[1].Id = "L004";
-        dataMaster.AssemblyLines[1].AssemblyLineNodesId = new string[2];
-        dataMaster.AssemblyLines[1].AssemblyLineNodesId[0] = "N007";
-        dataMaster.AssemblyLines[1].AssemblyLineNodesId[1] = "N008";
+        dataMaster.AssemblyLines[3] = new AssemblyLine();
+        dataMaster.AssemblyLines[3].Id = "L004";
+        dataMaster.AssemblyLines[3].AssemblyLineNodesId = new string[2];
+        dataMaster.AssemblyLines[3].AssemblyLineNodesId[0] = "N007";
+        dataMaster.AssemblyLines[3].AssemblyLineNodesId[1] = "N008";
 
         dataMaster.Robots[0] = new Robot();
         dataMaster.Robots[0].RobotID = "R001";
@@ -119,6 +118,8 @@ public static class DataManager{
         dataMaster.Misions[0].Requirements = "None";
         dataMaster.Misions[0].Description = "Lorem Ipsum : 100";
         dataMaster.Misions[0].Status = "Not Completed";
+        dataMaster.Misions[0].MisionName = "La Primera Mision";
+        dataMaster.Misions[0].EnemiesQuant = 13;
 
         dataMaster.Misions[1] = new Mision();
         dataMaster.Misions[1].Id = "M002";
@@ -126,6 +127,8 @@ public static class DataManager{
         dataMaster.Misions[1].Requirements = "M001";
         dataMaster.Misions[1].Description = "Lorem Ipsum : 100";
         dataMaster.Misions[1].Status = "Not Completed";
+        dataMaster.Misions[1].MisionName = "La Segunda Mision";
+        dataMaster.Misions[1].EnemiesQuant = 1;
 
         dataMaster.Misions[2] = new Mision();
         dataMaster.Misions[2].Id = "M003";
@@ -133,13 +136,8 @@ public static class DataManager{
         dataMaster.Misions[2].Requirements = "M002";
         dataMaster.Misions[2].Description = "Lorem Ipsum : 100";
         dataMaster.Misions[2].Status = "Not Completed";
-
-        dataMaster.Misions[3] = new Mision();
-        dataMaster.Misions[3].Id = "M004";
-        dataMaster.Misions[3].Dificulty = 1;
-        dataMaster.Misions[3].Requirements = "M003";
-        dataMaster.Misions[3].Description = "Lorem Ipsum : 100";
-        dataMaster.Misions[3].Status = "Not Completed";
+        dataMaster.Misions[2].MisionName = "La Tercera Mision";
+        dataMaster.Misions[2].EnemiesQuant = 20;
 
         dataMaster.RawMaterials[0] = new RawMaterial();
         dataMaster.RawMaterials[0].RawMaterialID = "E001";

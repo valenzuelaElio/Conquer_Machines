@@ -39,16 +39,15 @@ public class GenericListLoader : MonoBehaviour {
                     break;
 
                 case ElementListType.Misions:
+                    obj.GetComponent<MisionTemplate>().MyMision = (Mision)GenericList[i];
+                    obj.GetComponent<MisionTemplate>().ShowData();
                     break;
 
                 case ElementListType.Robots:
                     obj.GetComponent<RobotTemplate>().MyRobot = (Robot)GenericList[i];
                     obj.GetComponent<RobotTemplate>().ShowData();
-                    Debug.Log(obj.GetComponent<RobotTemplate>().MyRobot.RobotName);
                     break;
             }
-            
-
             obj.transform.SetParent(ItemTemplate.transform.parent, false);
         }
     }

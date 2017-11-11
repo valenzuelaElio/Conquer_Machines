@@ -40,6 +40,10 @@ public class GenericPanelTemplate : MonoBehaviour {
 
                 case TemplateType.TemplateTypeEx.Mision:
                     //genericGoID = genericGameobject.GetComponent<MisionTemplate>();
+                    genericGoID = genericGameobject.GetComponent<MisionTemplate>().MyMision.Id;
+                    Debug.Log("GenericName " + genericGameobject.GetComponent<MisionTemplate>().MyMision.Id);
+                    UpdateData(genericGameobject.GetComponent<MisionTemplate>());
+                    GameManager.Instance.CurrentSelectedMission = genericGameobject.GetComponent<MisionTemplate>().MyMision;
                     break;
 
                 case TemplateType.TemplateTypeEx.Robot:
@@ -59,8 +63,19 @@ public class GenericPanelTemplate : MonoBehaviour {
 
     void UpdateData(ITemplate GenericTemplate)
     {
-        this.Name.text = GenericTemplate.Id();
-        this.Description.text = GenericTemplate.Description();
-        this.Cant.text = "" + GenericTemplate.Cant();
+        if (Name != null)
+        {
+            this.Name.text = GenericTemplate.Id();
+        }
+
+        if (Description != null)
+        {
+            this.Description.text = GenericTemplate.Description();
+        }
+
+        if (Cant != null)
+        {
+            this.Cant.text = "" + GenericTemplate.Cant();
+        }
     }
 }

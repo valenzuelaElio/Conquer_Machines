@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviourSingleton<GameManager> {
 
+    public Mision CurrentSelectedMission; //Para pasar la informacion a la escena de batalla;
+
     private Game game;
     public Deck ChoosedDeck { get; set; }
 
@@ -50,6 +52,14 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
         Debug.Log("Escena : " + sceneName);
     }
 
+    public void PrepareToBattle()
+    {
+        if (this.CurrentSelectedMission != null)
+        {
+            Game.Instance.LoadScene(Game.Instance.GameData.ScenesNames[4]);
+        }
+    }
+
     public void CreateNode(GameObject createNodePanel)
     {
         createNodePanel.SetActive(true);
@@ -59,6 +69,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
     {
         GameObject.Find("CreateNodePanel").SetActive(false);
     }
+
 
 }
 

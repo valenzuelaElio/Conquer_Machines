@@ -13,6 +13,9 @@ public class Mision {
     [XmlElement("MisionID")]
     public string Id { get; set; }
 
+    [XmlElement("MisionName")]
+    public string MisionName { get; set; }
+
     [XmlElement("Requirements")]
     public string Requirements { get; set; }
 
@@ -24,6 +27,9 @@ public class Mision {
 
     [XmlElement("Status")]
     public string Status { get; set; }
+
+    [XmlElement("Enemies - Quantity")]
+    public int EnemiesQuant { get; set; }
 
     [XmlElement("Mission - Objective")]
     public Objective MissionObjective { get; set; }

@@ -27,6 +27,16 @@
       <AssemblyLineID>L001</AssemblyLineID>
     </AssemblyLine>
     <AssemblyLine>
+      <AssemblyLineNodes>N003</AssemblyLineNodes>
+      <AssemblyLineNodes>N004</AssemblyLineNodes>
+      <AssemblyLineID>L002</AssemblyLineID>
+    </AssemblyLine>
+    <AssemblyLine>
+      <AssemblyLineNodes>N005</AssemblyLineNodes>
+      <AssemblyLineNodes>N006</AssemblyLineNodes>
+      <AssemblyLineID>L003</AssemblyLineID>
+    </AssemblyLine>
+    <AssemblyLine>
       <AssemblyLineNodes>N007</AssemblyLineNodes>
       <AssemblyLineNodes>N008</AssemblyLineNodes>
       <AssemblyLineID>L004</AssemblyLineID>
@@ -45,7 +55,7 @@
     </Robot>
     <Robot>
       <RobotID>R002</RobotID>
-      <RobotName>R-002</RobotName>
+      <RobotName>R-003</RobotName>
       <Description>lorem ipsum : 80</Description>
       <Probability_Of_Breaking>120</Probability_Of_Breaking>
       <Life>70</Life>
@@ -55,7 +65,7 @@
     </Robot>
     <Robot>
       <RobotID>R003</RobotID>
-      <RobotName>R-004</RobotName>
+      <RobotName>R-005</RobotName>
       <Description>lorem ipsum : 80</Description>
       <Probability_Of_Breaking>100</Probability_Of_Breaking>
       <Life>50</Life>
@@ -95,34 +105,32 @@
   <Misions>
     <Mision>
       <MisionID>M001</MisionID>
+      <MisionName>La Primera Mision</MisionName>
       <Requirements>None</Requirements>
       <Dificulty>1</Dificulty>
       <Description>Lorem Ipsum : 100</Description>
       <Status>Not Completed</Status>
+      <Enemies_x0020_-_x0020_Quantity>13</Enemies_x0020_-_x0020_Quantity>
       <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
     </Mision>
     <Mision>
       <MisionID>M002</MisionID>
+      <MisionName>La Segunda Mision</MisionName>
       <Requirements>M001</Requirements>
       <Dificulty>1</Dificulty>
       <Description>Lorem Ipsum : 100</Description>
       <Status>Not Completed</Status>
+      <Enemies_x0020_-_x0020_Quantity>1</Enemies_x0020_-_x0020_Quantity>
       <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
     </Mision>
     <Mision>
       <MisionID>M003</MisionID>
+      <MisionName>La Tercera Mision</MisionName>
       <Requirements>M002</Requirements>
       <Dificulty>1</Dificulty>
       <Description>Lorem Ipsum : 100</Description>
       <Status>Not Completed</Status>
-      <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
-    </Mision>
-    <Mision>
-      <MisionID>M004</MisionID>
-      <Requirements>M003</Requirements>
-      <Dificulty>1</Dificulty>
-      <Description>Lorem Ipsum : 100</Description>
-      <Status>Not Completed</Status>
+      <Enemies_x0020_-_x0020_Quantity>20</Enemies_x0020_-_x0020_Quantity>
       <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
     </Mision>
   </Misions>
