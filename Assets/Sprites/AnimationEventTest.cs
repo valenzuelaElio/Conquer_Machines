@@ -6,6 +6,8 @@ public class AnimationEventTest : MonoBehaviour {
 
 	public ParticleSystem particle1;
 	public ParticleSystem particle2;
+	public ParticleSystem particle11;
+	public ParticleSystem particle22;
 	public ParticleSystem particle3;
 	public ParticleSystem particle4;
 	public ParticleSystem particle5;
@@ -27,6 +29,8 @@ public class AnimationEventTest : MonoBehaviour {
 		Debug.Log("Hola Mundo eventx");
 		particle1.Play();
 		particle2.Play();
+		particle11.Play();
+		particle22.Play();
 		particle3.Play();
 		particle4.Play();
 		particle5.Play();
