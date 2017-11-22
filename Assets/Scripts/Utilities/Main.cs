@@ -14,6 +14,13 @@ public class Main : MonoBehaviour {
     {
         //TODO: Se carga la informacion antes de comenzar el juego.
         DataManager.CreateDataMapExample(path);
+        DataManager.ListLoading();
+        ScenesManager.LastLoadedScene = DataManager.DataMaster.ScenesNames[0];
+    }
+
+    public void Play()
+    {
+        ScenesManager.GoToScene(Game.GameInstance.GameData.ScenesNames[1]);
     }
 
     //TODO: "Exit"? y "Options".

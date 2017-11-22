@@ -9,6 +9,10 @@ public class TemplateType : MonoBehaviour {
         Robot,
         Mision,
         AssemblyLine,
+        Node,
+        RawMaterial,
+        NodeCore,
+        NodeUpgrade,
 
     }
     public TemplateTypeEx Type;

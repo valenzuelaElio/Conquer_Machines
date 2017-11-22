@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,48 +7,111 @@ using UnityEngine.UI;
 
 public class Deck : MonoBehaviour{
 
-    public Robot[] RobotList;
-    Robot currentSElectedRobot;
-    int currentListPos;
+    public List<DataRobot> DeckList = new List<DataRobot>();
+    public int DeckSize { get { return DeckList.Count; } }
+    private DataMision currentMision;
+    public Text[] DeckInfo;//LevelDeckController
+    DataRobot LastRobotAdded;
+
+    int currentLevelOfDeck;
+    int maxLevel;
+    int minLevel;
+
+    private Image MyImage;
+    private Button MyButton;
 
 	void Start () {
-        RobotList = new Robot[10]; //TODO: conectarlo con las caracteristicas de la mision
-        currentListPos = 0;
+        currentMision = Game.GameInstance.currentSelectedMision;
+        currentLevelOfDeck = 0;
+        minLevel = currentMision.MinDeckLevel;
+        maxLevel = currentMision.MaxDeckLevel;
+
+        DeckList = new List<DataRobot>();
+        ShowLevels();
+
+        MyImage = GetComponent<Image>();
+        MyButton = GetComponent<Button>();
+        MyButton.onClick.AddListener(AddSelectedRobot);
+
+        if (currentLevelOfDeck <= minLevel)
+        {
+            MyImage.color = Color.blue;
+        }
 	}
 
-    public void AddRobotToDeck()
+    public void ShowLevels()
     {
-        RobotList[currentListPos] = currentSElectedRobot;
-        Debug.Log("R = " + RobotList[currentListPos].RobotID);
-        Debug.Log("Pos = " + currentListPos);
-        currentListPos++;
+        DeckInfo[0].text = "" + minLevel;
+        DeckInfo[1].text = "" + currentLevelOfDeck;
+        DeckInfo[2].text = "" + maxLevel;
     }
 
-    public void selectedRobot()
+    private void AddSelectedRobot()
     {
-        string id = EventSystem.current.currentSelectedGameObject.GetComponent<RobotTemplate>().robotName.text;
-        Debug.Log("ID = " + id);
-        currentSElectedRobot = SearchRobot(id);
-    }
-
-    Robot SearchRobot(string id)
-    {
-        Robot[] robotList = Game.Instance.GameData.Robots;
-        foreach (Robot temp in robotList)
+        if (Game.GameInstance.currentSelectedRobot == null)
         {
-            if (temp.RobotID.Equals(id))
+            DeckList.Remove(LastRobotAdded);
+            UpdateLevelOfDeck(false);
+            //Debug.Log("No has seleccionado ningun robot");
+            //Debug.Log("Robot " + LastRobotAdded.robot_id + " Eliminado");
+            LastRobotAdded = null;
+            return;
+        }
+        else
+        {
+            if (currentLevelOfDeck < maxLevel)
             {
-                return temp;
+                DeckList.Add(Game.GameInstance.currentSelectedRobot);
+                LastRobotAdded = Game.GameInstance.currentSelectedRobot;
+                UpdateLevelOfDeck(true);
+                Game.GameInstance.currentSelectedRobot = null;
+                //Debug.Log("Se ha a♫adido correctamente");
             }
         }
-        Debug.LogError("No se encontro al robot");
-        return robotList[0];
 
+        UpdateColors();
+
+    }
+
+    private void UpdateLevelOfDeck(bool added)
+    {
+        if (added == true)
+        {
+            currentLevelOfDeck += LastRobotAdded.robot_level;
+        }
+        else
+        {
+            currentLevelOfDeck -= LastRobotAdded.robot_level;
+        }
+        ShowLevels();
+    }
+
+    void UpdateColors()
+    {
+        if (currentLevelOfDeck < minLevel)
+        {
+            MyImage.color = Color.gray;
+            return;
+        }
+
+        if (currentLevelOfDeck > maxLevel)
+        {
+            MyImage.color = Color.red;
+            return;
+        }
+
+        MyImage.color = Color.green;
     }
 
     public void DeckReady()
     {
-        GameManager.Instance.ChoosedDeck = this;
+        if (currentLevelOfDeck >= minLevel && currentLevelOfDeck <= maxLevel)
+        {
+            Game.GameInstance.BattleDeck = this.DeckList;
+            ScenesManager.GoToScene(Game.GameInstance.GameData.ScenesNames[6]);
+            Debug.Log("Go to Battle");
+        }
     }
+
 
 }

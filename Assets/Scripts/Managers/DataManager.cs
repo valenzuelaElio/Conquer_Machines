@@ -8,219 +8,138 @@ using UnityEngine.UI;
 
 public static class DataManager{
 
-    private static Data dataMaster;
-    public static Data DataMaster { get { return dataMaster; } set { dataMaster = value; } }
+    public static Data DataMaster { get; set; }
+
+    public static List<DataMision> AllMisions               = new List<DataMision>();
+    public static List<DataExtractor> AllExtractors         = new List<DataExtractor>();
+    public static List<DataRawMaterial> AllRawMaterials     = new List<DataRawMaterial>();
+    public static List<DataAssemblyLine> AllAssemblyLines   = new List<DataAssemblyLine>();
+    public static List<DataRobot> AllRobots                 = new List<DataRobot>();
+    public static List<Core> AllCores                       = new List<Core>();
+    public static List<Upgrade> AllUpgrades                 = new List<Upgrade>();
+
     private static string path;
 
     public static void CreateDataMapExample(string XMLpath)
     {
         path = XMLpath;
         System.Random random = new System.Random();
+        DataMaster = new Data();
+        //Core Node
+        for (int i = 0; i < 4; i++)
+        {
+            DataMaster.Core_Nodes[i] = new Core();
+            DataMaster.Core_Nodes[i].node_id = "NC00" + i;
+            DataMaster.Core_Nodes[i].rawMaterial1 = "RM00" + 0;
+            DataMaster.Core_Nodes[i].rawMaterial2 = "RM00" + 1;
+            DataMaster.Core_Nodes[i].rawMaterial3 = "RM00" + 2;
+            DataMaster.Core_Nodes[i].cant1 = 10 * i;
+            DataMaster.Core_Nodes[i].cant2 = 20 * i;
+            DataMaster.Core_Nodes[i].cant3 = 30 * i;
+        }
+        //Upgrade Node
+        for (int i = 0; i < 4; i++)
+        {
+            DataMaster.Upgrade_Nodes[i] = new Upgrade();
+            DataMaster.Upgrade_Nodes[i].node_id = "NU00" + i;
+            DataMaster.Upgrade_Nodes[i].rawMaterial1 = "RM00" + 0;
+            DataMaster.Upgrade_Nodes[i].rawMaterial2 = "RM00" + 1;
+            DataMaster.Upgrade_Nodes[i].rawMaterial3 = "RM00" + 2;
+            DataMaster.Upgrade_Nodes[i].cant1 = 10 * i;
+            DataMaster.Upgrade_Nodes[i].cant2 = 20 * i;
+            DataMaster.Upgrade_Nodes[i].cant3 = 30 * i;
 
-        dataMaster = new Data();
-        //dataMaster = DeserializeData();
-        
-        dataMaster.Nodes[0] = new Node();
-        dataMaster.Nodes[0].id = "N001";
-        dataMaster.Nodes[0].rawMaterial1 = "iron";
-        dataMaster.Nodes[0].rawMaterial2 = "copper";
-        dataMaster.Nodes[0].rawMaterial3 = "aluminium";
-        dataMaster.Nodes[0].cant1 = 10;
-        dataMaster.Nodes[0].cant2 = 20;
-        dataMaster.Nodes[0].cant3 = 30;
+            DataMaster.Upgrade_Nodes[i].UpgradeType = "LifePoints";
+            DataMaster.Upgrade_Nodes[i].upgradeToApply = 10 * i;
+        }
+        //Assembly Lines
+        for (int i = 0; i < 4; i++)
+        {
+            DataMaster.AssemblyLines[i] = new DataAssemblyLine();
+            DataMaster.AssemblyLines[i].assembly_Line_Id = "L00" + i;
+            DataMaster.AssemblyLines[i].core_id = "NC00" + i;
+            DataMaster.AssemblyLines[i].upgrade_Node_1 = "NU00" + 0;
+            DataMaster.AssemblyLines[i].upgrade_Node_2 = "NU00" + 1;
+            DataMaster.AssemblyLines[i].upgrade_Node_3 = "NU00" + 2;
+            DataMaster.AssemblyLines[i].robot_id = "R00" + i;
+        }
+        //Robots
+        for (int i = 0; i < 4; i++)
+        {
+            DataMaster.Robots[i] = new DataRobot();
+            DataMaster.Robots[i].robot_id = "R00" + i;
+            DataMaster.Robots[i].robot_Description = "lorem ipsum : 80";
+            DataMaster.Robots[i].LifePoints = 50 * i + 50;
+            DataMaster.Robots[i].EnergyCost = 20 * i;
+            DataMaster.Robots[i].Attack = 10 * i;
+            DataMaster.Robots[i].Speed = 10 * i;
+            DataMaster.Robots[i].robot_name = "RHE-00" + i + "(Prototype)";
+            DataMaster.Robots[i].robot_level = random.Next(1, 3);
+            DataMaster.Robots[i].Duration = 10;
+        }
+        //Misions
+        for (int i = 0; i < 3; i++)
+        {
+            DataMaster.Misions[i] = new DataMision();
+            DataMaster.Misions[i].mision_Id = "M00" + i;
+            DataMaster.Misions[i].Dificulty = i;
+            DataMaster.Misions[i].Requirements = "None";
+            DataMaster.Misions[i].Description = "Lorem Ipsum : 100";
+            DataMaster.Misions[i].isCompleted = false;
+            DataMaster.Misions[i].mision_Name = "Mision " + i;
+            DataMaster.Misions[i].EnemiesQnty = 5 * (i + 1);
+            DataMaster.Misions[i].MinDeckLevel = 0 + (1 * i);
+            DataMaster.Misions[i].MaxDeckLevel = 6 + (3 * i);
+        }
+        //Raw materials
+        for (int i = 0; i < 4; i++)
+        {
+            DataMaster.RawMaterials[i] = new DataRawMaterial();
+            DataMaster.RawMaterials[i].RawMaterialID = "RM00" + i;
+            DataMaster.RawMaterials[i].RawMaterialName = "Iron v" + i;
+            DataMaster.RawMaterials[i].Rarity = i + 1;
+        }
+        //Extractors
+        for (int i = 0; i < 2; i++)
+        {
+            DataMaster.Extractors[i] = new DataExtractor();
+            DataMaster.Extractors[i].Id = "E00" + i;
+            DataMaster.Extractors[i].rawMaterial_Id = "RM00" + i;
+            DataMaster.Extractors[i].rawMaterial_initialQnty = 0;
+            DataMaster.Extractors[i].rawMaterial_recolectedQnty = 0;
+            DataMaster.Extractors[i].robot_id = "R00" + i;
+            DataMaster.Extractors[i].robot_initialQnty = 0;
+            DataMaster.Extractors[i].robot_Left = 0;
+        }
 
-        dataMaster.Nodes[1] = new Node();
-        dataMaster.Nodes[1].id = "N002";
-        dataMaster.Nodes[1].rawMaterial1 = "aluminium";
-        dataMaster.Nodes[1].rawMaterial2 = "iron";
-        dataMaster.Nodes[1].rawMaterial3 = "copper";
-        dataMaster.Nodes[1].cant1 = 40;
-        dataMaster.Nodes[1].cant1 = 50;
-        dataMaster.Nodes[1].cant1 = 60;
-
-        dataMaster.AssemblyLines[0] = new AssemblyLine();
-        dataMaster.AssemblyLines[0].Id = "L001";
-        dataMaster.AssemblyLines[0].AssemblyLineNodesId = new string[2];
-        dataMaster.AssemblyLines[0].AssemblyLineNodesId[0] = "N001";
-        dataMaster.AssemblyLines[0].AssemblyLineNodesId[1] = "N002";
-
-        dataMaster.AssemblyLines[1] = new AssemblyLine();
-        dataMaster.AssemblyLines[1].Id = "L002";
-        dataMaster.AssemblyLines[1].AssemblyLineNodesId = new string[2];
-        dataMaster.AssemblyLines[1].AssemblyLineNodesId[0] = "N003";
-        dataMaster.AssemblyLines[1].AssemblyLineNodesId[1] = "N004";
-
-        dataMaster.AssemblyLines[2] = new AssemblyLine();
-        dataMaster.AssemblyLines[2].Id = "L003";
-        dataMaster.AssemblyLines[2].AssemblyLineNodesId = new string[2];
-        dataMaster.AssemblyLines[2].AssemblyLineNodesId[0] = "N005";
-        dataMaster.AssemblyLines[2].AssemblyLineNodesId[1] = "N006";
-
-        dataMaster.AssemblyLines[3] = new AssemblyLine();
-        dataMaster.AssemblyLines[3].Id = "L004";
-        dataMaster.AssemblyLines[3].AssemblyLineNodesId = new string[2];
-        dataMaster.AssemblyLines[3].AssemblyLineNodesId[0] = "N007";
-        dataMaster.AssemblyLines[3].AssemblyLineNodesId[1] = "N008";
-
-        dataMaster.Robots[0] = new Robot();
-        dataMaster.Robots[0].RobotID = "R001";
-        dataMaster.Robots[0].Description = "lorem ipsum : 80";
-        dataMaster.Robots[0].LifePoints = 50;
-        dataMaster.Robots[0].ProbBreaking = 100;
-        dataMaster.Robots[0].EnergyCost = 20;
-        dataMaster.Robots[0].Attack = 10;
-        dataMaster.Robots[0].AttackSpeed = 1;
-        dataMaster.Robots[0].RobotName = "R-00" + random.Next(0,2);
-
-        dataMaster.Robots[1] = new Robot();
-        dataMaster.Robots[1].RobotID = "R002";
-        dataMaster.Robots[1].Description = "lorem ipsum : 80";
-        dataMaster.Robots[1].LifePoints = 70;
-        dataMaster.Robots[1].ProbBreaking = 120;
-        dataMaster.Robots[1].EnergyCost = 40;
-        dataMaster.Robots[1].Attack = 10;
-        dataMaster.Robots[1].AttackSpeed = 1;
-        dataMaster.Robots[1].RobotName = "R-00" + random.Next(2, 4);
-
-        dataMaster.Robots[2] = new Robot();
-        dataMaster.Robots[2].RobotID = "R003";
-        dataMaster.Robots[2].Description = "lorem ipsum : 80";
-        dataMaster.Robots[2].LifePoints = 50;
-        dataMaster.Robots[2].ProbBreaking = 100;
-        dataMaster.Robots[2].EnergyCost = 20;
-        dataMaster.Robots[2].Attack = 20;
-        dataMaster.Robots[2].AttackSpeed = 1;
-        dataMaster.Robots[2].RobotName = "R-00" + random.Next(4, 6);
-
-        dataMaster.Robots[3] = new Robot();
-        dataMaster.Robots[3].RobotID = "R004";
-        dataMaster.Robots[3].Description = "lorem ipsum : 80";
-        dataMaster.Robots[3].LifePoints = 70;
-        dataMaster.Robots[3].ProbBreaking = 120;
-        dataMaster.Robots[3].EnergyCost = 40;
-        dataMaster.Robots[3].Attack = 20;
-        dataMaster.Robots[3].AttackSpeed = 10;
-        dataMaster.Robots[3].RobotName = "R-00" + random.Next(6, 8); 
-
-        dataMaster.Robots[4] = new Robot();
-        dataMaster.Robots[4].RobotID = "R005";
-        dataMaster.Robots[4].Description = "lorem ipsum : 80";
-        dataMaster.Robots[4].LifePoints = 50;
-        dataMaster.Robots[4].ProbBreaking = 100;
-        dataMaster.Robots[4].EnergyCost = 20;
-        dataMaster.Robots[4].Attack = 20;
-        dataMaster.Robots[4].AttackSpeed = 10;
-        dataMaster.Robots[4].RobotName = "R-00" + random.Next(8, 10);
-
-        dataMaster.Misions[0] = new Mision();
-        dataMaster.Misions[0].Id = "M001";
-        dataMaster.Misions[0].Dificulty = 1;
-        dataMaster.Misions[0].Requirements = "None";
-        dataMaster.Misions[0].Description = "Lorem Ipsum : 100";
-        dataMaster.Misions[0].Status = "Not Completed";
-        dataMaster.Misions[0].MisionName = "La Primera Mision";
-        dataMaster.Misions[0].EnemiesQuant = 13;
-
-        dataMaster.Misions[1] = new Mision();
-        dataMaster.Misions[1].Id = "M002";
-        dataMaster.Misions[1].Dificulty = 1;
-        dataMaster.Misions[1].Requirements = "M001";
-        dataMaster.Misions[1].Description = "Lorem Ipsum : 100";
-        dataMaster.Misions[1].Status = "Not Completed";
-        dataMaster.Misions[1].MisionName = "La Segunda Mision";
-        dataMaster.Misions[1].EnemiesQuant = 1;
-
-        dataMaster.Misions[2] = new Mision();
-        dataMaster.Misions[2].Id = "M003";
-        dataMaster.Misions[2].Dificulty = 1;
-        dataMaster.Misions[2].Requirements = "M002";
-        dataMaster.Misions[2].Description = "Lorem Ipsum : 100";
-        dataMaster.Misions[2].Status = "Not Completed";
-        dataMaster.Misions[2].MisionName = "La Tercera Mision";
-        dataMaster.Misions[2].EnemiesQuant = 20;
-
-        dataMaster.RawMaterials[0] = new RawMaterial();
-        dataMaster.RawMaterials[0].RawMaterialID = "E001";
-        dataMaster.RawMaterials[0].RawMaterialName = "Copper";
-        dataMaster.RawMaterials[0].ExtractionTimePerUnit = 10;
-
-        dataMaster.RawMaterials[1] = new RawMaterial();
-        dataMaster.RawMaterials[1].RawMaterialID = "E002";
-        dataMaster.RawMaterials[1].RawMaterialName = "Iron";
-        dataMaster.RawMaterials[1].ExtractionTimePerUnit = 5;
-
-        dataMaster.Extractors[0] = new Extractor();
-        dataMaster.Extractors[0].Id = "E001";
-        dataMaster.Extractors[0].RobotID = "R001";
-        dataMaster.Extractors[0].RawMaterialID = "RM001";
-        dataMaster.Extractors[0].RawMaterialCant = 0;
-        dataMaster.Extractors[0].RobotCant = 10;
-
-        dataMaster.Extractors[1] = new Extractor();
-        dataMaster.Extractors[1].Id = "E002";
-        dataMaster.Extractors[1].RobotID = "R002";
-        dataMaster.Extractors[1].RawMaterialID = "RM002";
-        dataMaster.Extractors[1].RawMaterialCant = 0;
-        dataMaster.Extractors[1].RobotCant = 0;
-
-        dataMaster.ScenesNames[0] = "CM_1_AssemblyLines";
-        dataMaster.ScenesNames[1] = "CM_2_RobotInventory";
-        dataMaster.ScenesNames[2] = "CM_3_Extractions";
-        dataMaster.ScenesNames[3] = "CM_4_BattleList";
-        dataMaster.ScenesNames[4] = "CM_4.1_BattlePreparation";
-        dataMaster.ScenesNames[5] = "CM_4.2_Minigame";
+        DataMaster.ScenesNames[0] = "CM_0_Main";
+        DataMaster.ScenesNames[1] = "CM_1_AssemblyLines";
+        DataMaster.ScenesNames[2] = "CM_2_RobotInventory";
+        DataMaster.ScenesNames[3] = "CM_3_Extractions";
+        DataMaster.ScenesNames[4] = "CM_4_BattleList";
+        DataMaster.ScenesNames[5] = "CM_4.1_BattlePreparation";
+        DataMaster.ScenesNames[6] = "CM_4.2_Minigame";
 
         SerializeDataOnPC();
-
+        //SerializeData();
+        //dataMaster = DeserializeData();
         //dataMaster = DeserializeDataOPc();
 
-        //LoadAssemblyLines();
-        
-    }
-
-    static void Start () {
-
-        //XMLOperator.Serialize(dataMaster, path);
-
-        /*DataMaster = XMLOperator.Deserialize<Data>(path);
-        ImprimirDatosDeNodos();
-
-        for (int i = 0; i < DataMaster.Nodes.Length; i++)
-        {
-            text.text = text.text + DataMaster.Nodes[i].id + "\n";
-            text.text = text.text + (DataMaster.Nodes[i].rawMaterial1 + " = " + DataMaster.Nodes[i].cant1 + "\n");
-            text.text = text.text + (DataMaster.Nodes[i].rawMaterial2 + " = " + DataMaster.Nodes[i].cant2 + "\n");
-            text.text = text.text + (DataMaster.Nodes[i].rawMaterial3 + " = " + DataMaster.Nodes[i].cant3 + "\n");
-            text.text = text.text + ("---\n");
-        }*/
-
-    }
-
-    static void ImprimirDatosDeNodos()
-    {
-        for (int i = 0; i < DataMaster.Nodes.Length; i++)
-        {
-            Debug.Log(DataMaster.Nodes[i].id);
-            Debug.Log(DataMaster.Nodes[i].rawMaterial1 + " = " + DataMaster.Nodes[i].cant1);
-            Debug.Log(DataMaster.Nodes[i].rawMaterial2 + " = " + DataMaster.Nodes[i].cant2);
-            Debug.Log(DataMaster.Nodes[i].rawMaterial3 + " = " + DataMaster.Nodes[i].cant3);
-            Debug.Log("---");
-        }
     }
 
     static public void SerializeData()
     {
-        XMLOperator.Serialize(dataMaster,path);
+        XMLOperator.Serialize(DataMaster,path);
     }
 
     static public void SerializeDataOnPC()
     {
-        XMLOperator.SerializeOnPC(dataMaster, path);
+        XMLOperator.SerializeOnPC(DataMaster, path);
     }
 
-    static public Data DeserializeDataOPc()
+    static public Data DeserializeDataOnPc()
     {
-        return XMLOperator.Deserialize<Data>(path);
+        return XMLOperator.DeserializeOnPC<Data>(path);
     }
 
     static public Data DeserializeData()
@@ -228,23 +147,36 @@ public static class DataManager{
         return XMLOperator.Deserialize<Data>(path);
     }
 
-
-    private static void LoadAssemblyLines()
+    static public void ListLoading()
     {
-        Node[] nodes = dataMaster.Nodes;
-        AssemblyLine[] assemblyLines = dataMaster.AssemblyLines;
-        foreach (AssemblyLine assemblyLine in assemblyLines)
-        {
-            for (int i = 0; i < assemblyLine.AssemblyLineNodesId.Length; i++) {
-                string assemblyLineNodeId = assemblyLine.AssemblyLineNodesId[i];
-                foreach (Node node in nodes)
-                {
-                    if (node.id.Equals(assemblyLineNodeId))
-                    {
-                        assemblyLine.Assembly(node.id, node);
-                    }
-                }
-            }
-        }
+        for (int i = 0; i < DataMaster.Misions.Length; i++)
+            if(DataMaster.Misions[i] != null)
+                AllMisions.Add(DataMaster.Misions[i]);
+
+        for (int i = 0; i < DataMaster.RawMaterials.Length; i++)
+            if (DataMaster.RawMaterials[i] != null)
+                AllRawMaterials.Add(DataMaster.RawMaterials[i]);
+
+        for (int i = 0; i < DataMaster.Extractors.Length; i++)
+            if (DataMaster.Extractors[i] != null)
+                AllExtractors.Add(DataMaster.Extractors[i]);
+
+        for (int i = 0; i < DataMaster.AssemblyLines.Length; i++)
+            if (DataMaster.AssemblyLines[i] != null)
+                AllAssemblyLines.Add(DataMaster.AssemblyLines[i]);
+
+        for (int i = 0; i < DataMaster.Core_Nodes.Length; i++)
+            if (DataMaster.Core_Nodes[i] != null)
+                AllCores.Add(DataMaster.Core_Nodes[i]);
+
+        for (int i = 0; i < DataMaster.Upgrade_Nodes.Length; i++)
+            if (DataMaster.Upgrade_Nodes[i] != null)
+                AllUpgrades.Add(DataMaster.Upgrade_Nodes[i]);
+
+        for (int i = 0; i < DataMaster.Robots.Length; i++)
+            if (DataMaster.Robots[i] != null)
+                AllRobots.Add(DataMaster.Robots[i]);
+
     }
+
 }

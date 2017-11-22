@@ -1,44 +1,76 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviourSingleton<GameManager> {
 
-    public Mision CurrentSelectedMission; //Para pasar la informacion a la escena de batalla;
+    public DataMision CurrentSelectedMission; //Para pasar la informacion a la escena de batalla;
+    public DataAssemblyLine currentAssemblyLineSelected;
+    public DataNode currentNodeSelected;
 
     private Game game;
     public Deck ChoosedDeck { get; set; }
 
+    GameObject SNPanel;//Selected node
+    GameObject CNPanel;//Create new Node
+
     void Start () {
-        game = Game.Instance;
-	}
+        game = Game.GameInstance;
+    }
 	
 	void Update () {
-        /*switch (game.ActualState)
+        if (game.ActualState == Game.GameState.Loading)
         {
-            case Game.GameState.AssemblyLines:
-                GameObject.Find("Button_AssemblyLines").GetComponent<Button>().interactable = false;
+            if (ScenesManager.PreviousScene != SceneManager.GetActiveScene().name) //Si se cambio de escena
+            {
+                //InitializeAssembliLine();
+            }
 
-                break;
-            case "CM_3_Extractions":
-                GameObject.Find("Button_Extractions").GetComponent<Button>().interactable = false;
+            game.ActualState = Game.GameState.Playing;
+        }
 
-                break;
-            case "CM_4_BattleList":
-                GameObject.Find("Button_BattleList").GetComponent<Button>().interactable = false;
+        //Updates:
+        //UpdateAssemblyLineScene();
 
-                break;
-            case "CM_2_RobotInventory":
-                GameObject.Find("Button_RobotInventory").GetComponent<Button>().interactable = false;
-                break;
+    }
 
-        }*/
+    private void UpdateAssemblyLineScene()
+    {
+        //GameObject SNPanel = GameObject.Find("SelectedNode") as GameObject;
+        if (EventSystem.current.currentSelectedGameObject != null)
+        {
+            if (EventSystem.current.currentSelectedGameObject.GetComponent<AssemblyLine>() != null)
+            {
+                SNPanel.SetActive(true);
+            }
+            else
+            {
+                SNPanel.SetActive(false);
+            }
 
-	}
+            if (EventSystem.current.currentSelectedGameObject.GetComponent<Node>() != null)
+            {
+                if (EventSystem.current.currentSelectedGameObject.GetComponent<Node>().Active == true)
+                {
+                    CNPanel.SetActive(false);
+                }
+                else
+                {
+                    CNPanel.SetActive(true);
+                }
+            }
+        }
+        Debug.Log("El gameobject es nulo");
+    }
 
     public void NavigateScene(string sceneName)
     {
+
+        /*
         switch (sceneName)
         {
             case "CM_1_AssemblyLines": Game.Instance.LoadScene(sceneName); break;
@@ -48,6 +80,9 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
             case "CM_4.1_BattlePreparation": Game.Instance.LoadScene(sceneName); break;
             case "CM_4.2_Minigame": Game.Instance.LoadScene(sceneName); break;
         }
+        */
+
+        ScenesManager.GoToScene(sceneName);
 
         Debug.Log("Escena : " + sceneName);
     }
@@ -56,7 +91,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
     {
         if (this.CurrentSelectedMission != null)
         {
-            Game.Instance.LoadScene(Game.Instance.GameData.ScenesNames[4]);
+            ScenesManager.GoToScene(Game.GameInstance.GameData.ScenesNames[4]);
         }
     }
 
@@ -70,7 +105,21 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
         GameObject.Find("CreateNodePanel").SetActive(false);
     }
 
+    public void CreateNewNode(GameObject A_Line_Panel)
+    {
+        Debug.Log("Cree un nuevo nodo");
 
+
+    }
+
+    public void CreateNode()
+    {
+        if (currentAssemblyLineSelected != null && currentNodeSelected != null)
+        {
+            currentAssemblyLineSelected.AssemblyLineNodes.Add(currentNodeSelected.node_id, currentNodeSelected);
+            Debug.Log("ID = " + currentAssemblyLineSelected.assembly_Line_Id);
+        }
+    }
 }
 
 

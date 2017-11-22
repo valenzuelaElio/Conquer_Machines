@@ -5,72 +5,64 @@ using UnityEngine.SceneManagement;
 
 public class Game {
 
-    //private Data gamedata;
-    private static Game game;
-    private PlayerState playerState; //Informacion del jugador.
-    private Data gameData;
-    private string lastScene;
+    public DataExtractor    currentSelectedExtractor;
+    public DataMision       currentSelectedMision;
+    public DataRawMaterial  currentSelectedRawMaterial;
+    public DataAssemblyLine currentSelectedAssemblyLine;
+    public DataRobot        currentSelectedRobot;
+    public DataNode         currentSelectedNode;
+    public Core             currentSelectedCoreNode;
+    public Upgrade          currentSelectedUpgradeNode;
 
-    public static Game Instance { get { return game; } set { game = value; } }
-    public PlayerState PlayerStateInstance { get { return playerState; } set { playerState = value; } }
-    public Data GameData { get { return gameData; } set { gameData = value; } }
-    public string LastScene { get { return lastScene; } set { lastScene = value; } }
+    public List<DataRobot> BattleDeck;
+
+    public static Game GameInstance { get; set; }
+    public PlayerState PlayerInstance { get; set; }
+    public Data GameData { get; set; }
+    public string LastScene { get; set;}
 
     public enum GameState
     {
         Loading,
-        Inventory, //Scene
-        BattleList, //Scene
-        AssemblyLines, //Scene
-        Extractions, //Scene
         Playing,
-        GameOver
+        GameOver,
+        InBattle,
 
     }
-    private GameState actualState;
-    public GameState ActualState { get { return actualState; } set { actualState = value; } }
+    public GameState ActualState { get; set; }
 
     public Game(Data data)
     {
-        playerState = new PlayerState(); //Se crea al jugador con la informacion vacia. que el jugador cargue su informacion.
-        gameData = data;
+        PlayerInstance  = new PlayerState(); //Se crea al jugador con la informacion vacia. que el jugador cargue su informacion.
+        PlayerInstance.NewPlayer(data);
+        GameData        = new Data();
+        LoadData(data);
     }
 
     public static void CreateGame(Data data)
     {
-        game = new Game(data);
-        game.Start();
+        GameInstance = new Game(data);//El data se cargo en la escena anterior en el awake
+        GameInstance.LoadData(data);
+        GameInstance.Start();
 
-    }
-
-    public static void CreateBattle() //TODO: Eliminar esto
-    {
-        DataManager.CreateDataMapExample("test001Xml");
-        game = new Game(DataManager.DataMaster);
     }
 
     public void Start()
     {
-        LoadScene(GameData.ScenesNames[0]);
+        ScenesManager.LoadScenes(this.GameData.ScenesNames); //Se cargan los nombres de las escenas;
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadData(Data data)
     {
-        SceneManager.LoadScene(sceneName);
-        lastScene = sceneName;
-    }
-
-    public void ReloadScene()
-    {
-        SceneManager.LoadScene(lastScene);
-    }
-
-    public void LoadData()
-    {
-
+        GameData = data;
     }
 
     public void SaveData()
+    {
+
+    }
+
+    public void CreateNewExtractor()
     {
 
     }

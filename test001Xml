@@ -1,100 +1,175 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <DataPool xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Nodes>
-    <Node>
-      <RawMaterial1>iron</RawMaterial1>
-      <RawMaterial2>copper</RawMaterial2>
-      <RawMaterial3>aluminium</RawMaterial3>
-      <Quantity1>10</Quantity1>
-      <Quantity2>20</Quantity2>
-      <Quantity3>30</Quantity3>
-      <NodeID>N001</NodeID>
-    </Node>
-    <Node>
-      <RawMaterial1>aluminium</RawMaterial1>
-      <RawMaterial2>iron</RawMaterial2>
-      <RawMaterial3>copper</RawMaterial3>
-      <Quantity1>60</Quantity1>
-      <Quantity2>0</Quantity2>
+  <Core_x0020_Nodes>
+    <Core_x0020_Node>
+      <RawMaterial1>RM000</RawMaterial1>
+      <RawMaterial2>RM001</RawMaterial2>
+      <RawMaterial3>RM002</RawMaterial3>
+      <Quantity1>0</Quantity1>
       <Quantity3>0</Quantity3>
-      <NodeID>N002</NodeID>
-    </Node>
-  </Nodes>
+      <Quantity2>0</Quantity2>
+      <ID>NC000</ID>
+    </Core_x0020_Node>
+    <Core_x0020_Node>
+      <RawMaterial1>RM000</RawMaterial1>
+      <RawMaterial2>RM001</RawMaterial2>
+      <RawMaterial3>RM002</RawMaterial3>
+      <Quantity1>10</Quantity1>
+      <Quantity3>30</Quantity3>
+      <Quantity2>20</Quantity2>
+      <ID>NC001</ID>
+    </Core_x0020_Node>
+    <Core_x0020_Node>
+      <RawMaterial1>RM000</RawMaterial1>
+      <RawMaterial2>RM001</RawMaterial2>
+      <RawMaterial3>RM002</RawMaterial3>
+      <Quantity1>20</Quantity1>
+      <Quantity3>60</Quantity3>
+      <Quantity2>40</Quantity2>
+      <ID>NC002</ID>
+    </Core_x0020_Node>
+    <Core_x0020_Node>
+      <RawMaterial1>RM000</RawMaterial1>
+      <RawMaterial2>RM001</RawMaterial2>
+      <RawMaterial3>RM002</RawMaterial3>
+      <Quantity1>30</Quantity1>
+      <Quantity3>90</Quantity3>
+      <Quantity2>60</Quantity2>
+      <ID>NC003</ID>
+    </Core_x0020_Node>
+  </Core_x0020_Nodes>
+  <Upgrades_x0020_Nodes>
+    <Upgrades_x0020_Node>
+      <RawMaterial1>RM000</RawMaterial1>
+      <RawMaterial2>RM001</RawMaterial2>
+      <RawMaterial3>RM002</RawMaterial3>
+      <Quantity1>0</Quantity1>
+      <Quantity3>0</Quantity3>
+      <Quantity2>0</Quantity2>
+      <ID>NU000</ID>
+      <UpgradeType>LifePoints</UpgradeType>
+      <upgradeToApply>0</upgradeToApply>
+    </Upgrades_x0020_Node>
+    <Upgrades_x0020_Node>
+      <RawMaterial1>RM000</RawMaterial1>
+      <RawMaterial2>RM001</RawMaterial2>
+      <RawMaterial3>RM002</RawMaterial3>
+      <Quantity1>10</Quantity1>
+      <Quantity3>30</Quantity3>
+      <Quantity2>20</Quantity2>
+      <ID>NU001</ID>
+      <UpgradeType>LifePoints</UpgradeType>
+      <upgradeToApply>10</upgradeToApply>
+    </Upgrades_x0020_Node>
+    <Upgrades_x0020_Node>
+      <RawMaterial1>RM000</RawMaterial1>
+      <RawMaterial2>RM001</RawMaterial2>
+      <RawMaterial3>RM002</RawMaterial3>
+      <Quantity1>20</Quantity1>
+      <Quantity3>60</Quantity3>
+      <Quantity2>40</Quantity2>
+      <ID>NU002</ID>
+      <UpgradeType>LifePoints</UpgradeType>
+      <upgradeToApply>20</upgradeToApply>
+    </Upgrades_x0020_Node>
+    <Upgrades_x0020_Node>
+      <RawMaterial1>RM000</RawMaterial1>
+      <RawMaterial2>RM001</RawMaterial2>
+      <RawMaterial3>RM002</RawMaterial3>
+      <Quantity1>30</Quantity1>
+      <Quantity3>90</Quantity3>
+      <Quantity2>60</Quantity2>
+      <ID>NU003</ID>
+      <UpgradeType>LifePoints</UpgradeType>
+      <upgradeToApply>30</upgradeToApply>
+    </Upgrades_x0020_Node>
+  </Upgrades_x0020_Nodes>
   <AssemblyLines>
     <AssemblyLine>
-      <AssemblyLineNodes>N001</AssemblyLineNodes>
-      <AssemblyLineNodes>N002</AssemblyLineNodes>
-      <AssemblyLineID>L001</AssemblyLineID>
+      <ID>L000</ID>
+      <Tiempo_x0020_de_x0020_generacion_x0020_de_x0020_robots>0</Tiempo_x0020_de_x0020_generacion_x0020_de_x0020_robots>
+      <Nodo_x0020_Core>NC000</Nodo_x0020_Core>
+      <Nodo_x0020_de_x0020_Mejora_x0020_1>NU000</Nodo_x0020_de_x0020_Mejora_x0020_1>
+      <Nodo_x0020_de_x0020_Mejora_x0020_2>NU001</Nodo_x0020_de_x0020_Mejora_x0020_2>
+      <Nodo_x0020_de_x0020_Mejora_x0020_3>NU002</Nodo_x0020_de_x0020_Mejora_x0020_3>
+      <Robot_x0020_ID>R000</Robot_x0020_ID>
     </AssemblyLine>
     <AssemblyLine>
-      <AssemblyLineNodes>N003</AssemblyLineNodes>
-      <AssemblyLineNodes>N004</AssemblyLineNodes>
-      <AssemblyLineID>L002</AssemblyLineID>
+      <ID>L001</ID>
+      <Tiempo_x0020_de_x0020_generacion_x0020_de_x0020_robots>0</Tiempo_x0020_de_x0020_generacion_x0020_de_x0020_robots>
+      <Nodo_x0020_Core>NC001</Nodo_x0020_Core>
+      <Nodo_x0020_de_x0020_Mejora_x0020_1>NU000</Nodo_x0020_de_x0020_Mejora_x0020_1>
+      <Nodo_x0020_de_x0020_Mejora_x0020_2>NU001</Nodo_x0020_de_x0020_Mejora_x0020_2>
+      <Nodo_x0020_de_x0020_Mejora_x0020_3>NU002</Nodo_x0020_de_x0020_Mejora_x0020_3>
+      <Robot_x0020_ID>R001</Robot_x0020_ID>
     </AssemblyLine>
     <AssemblyLine>
-      <AssemblyLineNodes>N005</AssemblyLineNodes>
-      <AssemblyLineNodes>N006</AssemblyLineNodes>
-      <AssemblyLineID>L003</AssemblyLineID>
+      <ID>L002</ID>
+      <Tiempo_x0020_de_x0020_generacion_x0020_de_x0020_robots>0</Tiempo_x0020_de_x0020_generacion_x0020_de_x0020_robots>
+      <Nodo_x0020_Core>NC002</Nodo_x0020_Core>
+      <Nodo_x0020_de_x0020_Mejora_x0020_1>NU000</Nodo_x0020_de_x0020_Mejora_x0020_1>
+      <Nodo_x0020_de_x0020_Mejora_x0020_2>NU001</Nodo_x0020_de_x0020_Mejora_x0020_2>
+      <Nodo_x0020_de_x0020_Mejora_x0020_3>NU002</Nodo_x0020_de_x0020_Mejora_x0020_3>
+      <Robot_x0020_ID>R002</Robot_x0020_ID>
     </AssemblyLine>
     <AssemblyLine>
-      <AssemblyLineNodes>N007</AssemblyLineNodes>
-      <AssemblyLineNodes>N008</AssemblyLineNodes>
-      <AssemblyLineID>L004</AssemblyLineID>
+      <ID>L003</ID>
+      <Tiempo_x0020_de_x0020_generacion_x0020_de_x0020_robots>0</Tiempo_x0020_de_x0020_generacion_x0020_de_x0020_robots>
+      <Nodo_x0020_Core>NC003</Nodo_x0020_Core>
+      <Nodo_x0020_de_x0020_Mejora_x0020_1>NU000</Nodo_x0020_de_x0020_Mejora_x0020_1>
+      <Nodo_x0020_de_x0020_Mejora_x0020_2>NU001</Nodo_x0020_de_x0020_Mejora_x0020_2>
+      <Nodo_x0020_de_x0020_Mejora_x0020_3>NU002</Nodo_x0020_de_x0020_Mejora_x0020_3>
+      <Robot_x0020_ID>R003</Robot_x0020_ID>
     </AssemblyLine>
   </AssemblyLines>
   <Robots>
     <Robot>
-      <RobotID>R001</RobotID>
-      <RobotName>R-001</RobotName>
-      <Description>lorem ipsum : 80</Description>
-      <Probability_Of_Breaking>100</Probability_Of_Breaking>
-      <Life>50</Life>
+      <ID>R000</ID>
+      <Nombre>RHE-000(Prototype)</Nombre>
+      <Nivel>2</Nivel>
+      <Descripcion>lorem ipsum : 80</Descripcion>
+      <Duration>10</Duration>
+      <LifePoints>50</LifePoints>
+      <EnergyCost>0</EnergyCost>
+      <Attack>0</Attack>
+      <Speed>0</Speed>
+    </Robot>
+    <Robot>
+      <ID>R001</ID>
+      <Nombre>RHE-001(Prototype)</Nombre>
+      <Nivel>2</Nivel>
+      <Descripcion>lorem ipsum : 80</Descripcion>
+      <Duration>10</Duration>
+      <LifePoints>100</LifePoints>
       <EnergyCost>20</EnergyCost>
       <Attack>10</Attack>
-      <AttackSpeed>1</AttackSpeed>
+      <Speed>10</Speed>
     </Robot>
     <Robot>
-      <RobotID>R002</RobotID>
-      <RobotName>R-003</RobotName>
-      <Description>lorem ipsum : 80</Description>
-      <Probability_Of_Breaking>120</Probability_Of_Breaking>
-      <Life>70</Life>
-      <EnergyCost>40</EnergyCost>
-      <Attack>10</Attack>
-      <AttackSpeed>1</AttackSpeed>
-    </Robot>
-    <Robot>
-      <RobotID>R003</RobotID>
-      <RobotName>R-005</RobotName>
-      <Description>lorem ipsum : 80</Description>
-      <Probability_Of_Breaking>100</Probability_Of_Breaking>
-      <Life>50</Life>
-      <EnergyCost>20</EnergyCost>
-      <Attack>20</Attack>
-      <AttackSpeed>1</AttackSpeed>
-    </Robot>
-    <Robot>
-      <RobotID>R004</RobotID>
-      <RobotName>R-006</RobotName>
-      <Description>lorem ipsum : 80</Description>
-      <Probability_Of_Breaking>120</Probability_Of_Breaking>
-      <Life>70</Life>
+      <ID>R002</ID>
+      <Nombre>RHE-002(Prototype)</Nombre>
+      <Nivel>2</Nivel>
+      <Descripcion>lorem ipsum : 80</Descripcion>
+      <Duration>10</Duration>
+      <LifePoints>150</LifePoints>
       <EnergyCost>40</EnergyCost>
       <Attack>20</Attack>
-      <AttackSpeed>10</AttackSpeed>
+      <Speed>20</Speed>
     </Robot>
     <Robot>
-      <RobotID>R005</RobotID>
-      <RobotName>R-008</RobotName>
-      <Description>lorem ipsum : 80</Description>
-      <Probability_Of_Breaking>100</Probability_Of_Breaking>
-      <Life>50</Life>
-      <EnergyCost>20</EnergyCost>
-      <Attack>20</Attack>
-      <AttackSpeed>10</AttackSpeed>
+      <ID>R003</ID>
+      <Nombre>RHE-003(Prototype)</Nombre>
+      <Nivel>1</Nivel>
+      <Descripcion>lorem ipsum : 80</Descripcion>
+      <Duration>10</Duration>
+      <LifePoints>200</LifePoints>
+      <EnergyCost>60</EnergyCost>
+      <Attack>30</Attack>
+      <Speed>30</Speed>
     </Robot>
   </Robots>
   <ScenesNames>
+    <SceneName>CM_0_Main</SceneName>
     <SceneName>CM_1_AssemblyLines</SceneName>
     <SceneName>CM_2_RobotInventory</SceneName>
     <SceneName>CM_3_Extractions</SceneName>
@@ -104,62 +179,79 @@
   </ScenesNames>
   <Misions>
     <Mision>
-      <MisionID>M001</MisionID>
-      <MisionName>La Primera Mision</MisionName>
-      <Requirements>None</Requirements>
-      <Dificulty>1</Dificulty>
-      <Description>Lorem Ipsum : 100</Description>
-      <Status>Not Completed</Status>
-      <Enemies_x0020_-_x0020_Quantity>13</Enemies_x0020_-_x0020_Quantity>
-      <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
+      <ID>M000</ID>
+      <Nombre>Mision 0</Nombre>
+      <Requerimientos>None</Requerimientos>
+      <Status>false</Status>
+      <Dificultad>0</Dificultad>
+      <Descripcion>Lorem Ipsum : 100</Descripcion>
+      <Cantidad_x0020_de_x0020_Enemigos>5</Cantidad_x0020_de_x0020_Enemigos>
+      <Nivel_x0020_Minimo_x0020_del_x0020_Deck>0</Nivel_x0020_Minimo_x0020_del_x0020_Deck>
+      <Nivel_x0020_Maximo_x0020_del_x0020_Deck>6</Nivel_x0020_Maximo_x0020_del_x0020_Deck>
     </Mision>
     <Mision>
-      <MisionID>M002</MisionID>
-      <MisionName>La Segunda Mision</MisionName>
-      <Requirements>M001</Requirements>
-      <Dificulty>1</Dificulty>
-      <Description>Lorem Ipsum : 100</Description>
-      <Status>Not Completed</Status>
-      <Enemies_x0020_-_x0020_Quantity>1</Enemies_x0020_-_x0020_Quantity>
-      <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
+      <ID>M001</ID>
+      <Nombre>Mision 1</Nombre>
+      <Requerimientos>None</Requerimientos>
+      <Status>false</Status>
+      <Dificultad>1</Dificultad>
+      <Descripcion>Lorem Ipsum : 100</Descripcion>
+      <Cantidad_x0020_de_x0020_Enemigos>10</Cantidad_x0020_de_x0020_Enemigos>
+      <Nivel_x0020_Minimo_x0020_del_x0020_Deck>1</Nivel_x0020_Minimo_x0020_del_x0020_Deck>
+      <Nivel_x0020_Maximo_x0020_del_x0020_Deck>9</Nivel_x0020_Maximo_x0020_del_x0020_Deck>
     </Mision>
     <Mision>
-      <MisionID>M003</MisionID>
-      <MisionName>La Tercera Mision</MisionName>
-      <Requirements>M002</Requirements>
-      <Dificulty>1</Dificulty>
-      <Description>Lorem Ipsum : 100</Description>
-      <Status>Not Completed</Status>
-      <Enemies_x0020_-_x0020_Quantity>20</Enemies_x0020_-_x0020_Quantity>
-      <Mission_x0020_-_x0020_Objective>Ob1</Mission_x0020_-_x0020_Objective>
+      <ID>M002</ID>
+      <Nombre>Mision 2</Nombre>
+      <Requerimientos>None</Requerimientos>
+      <Status>false</Status>
+      <Dificultad>2</Dificultad>
+      <Descripcion>Lorem Ipsum : 100</Descripcion>
+      <Cantidad_x0020_de_x0020_Enemigos>15</Cantidad_x0020_de_x0020_Enemigos>
+      <Nivel_x0020_Minimo_x0020_del_x0020_Deck>2</Nivel_x0020_Minimo_x0020_del_x0020_Deck>
+      <Nivel_x0020_Maximo_x0020_del_x0020_Deck>12</Nivel_x0020_Maximo_x0020_del_x0020_Deck>
     </Mision>
   </Misions>
   <Extractors>
     <Extractor>
-      <ExtractorID>E001</ExtractorID>
-      <RobotID>R001</RobotID>
-      <RawMaterialID>RM001</RawMaterialID>
-      <RawMaterialCant>0</RawMaterialCant>
-      <RobotCant>10</RobotCant>
+      <EX-ID>E000</EX-ID>
+      <RM-ID>RM000</RM-ID>
+      <RM-InitialQuantity>0</RM-InitialQuantity>
+      <RM-Recolected>0</RM-Recolected>
+      <R-ID>R000</R-ID>
+      <R-InitialRobotQuantity>0</R-InitialRobotQuantity>
+      <R-RobotLeft>0</R-RobotLeft>
     </Extractor>
     <Extractor>
-      <ExtractorID>E002</ExtractorID>
-      <RobotID>R002</RobotID>
-      <RawMaterialID>RM002</RawMaterialID>
-      <RawMaterialCant>0</RawMaterialCant>
-      <RobotCant>0</RobotCant>
+      <EX-ID>E001</EX-ID>
+      <RM-ID>RM001</RM-ID>
+      <RM-InitialQuantity>0</RM-InitialQuantity>
+      <RM-Recolected>0</RM-Recolected>
+      <R-ID>R001</R-ID>
+      <R-InitialRobotQuantity>0</R-InitialRobotQuantity>
+      <R-RobotLeft>0</R-RobotLeft>
     </Extractor>
   </Extractors>
   <RawMaterials>
     <RawMaterial>
-      <RawMaterialID>E001</RawMaterialID>
-      <RawMaterialName>Copper</RawMaterialName>
-      <ExtractionTimePerUnit>10</ExtractionTimePerUnit>
+      <ID>RM000</ID>
+      <Nombre>Iron v0</Nombre>
+      <Rareza>1</Rareza>
     </RawMaterial>
     <RawMaterial>
-      <RawMaterialID>E002</RawMaterialID>
-      <RawMaterialName>Iron</RawMaterialName>
-      <ExtractionTimePerUnit>5</ExtractionTimePerUnit>
+      <ID>RM001</ID>
+      <Nombre>Iron v1</Nombre>
+      <Rareza>2</Rareza>
+    </RawMaterial>
+    <RawMaterial>
+      <ID>RM002</ID>
+      <Nombre>Iron v2</Nombre>
+      <Rareza>3</Rareza>
+    </RawMaterial>
+    <RawMaterial>
+      <ID>RM003</ID>
+      <Nombre>Iron v3</Nombre>
+      <Rareza>4</Rareza>
     </RawMaterial>
   </RawMaterials>
 </DataPool>
