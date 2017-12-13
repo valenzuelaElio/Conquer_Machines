@@ -78,6 +78,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CherryPick\Sprites\AnimationEventTest.cs" />
+    <Compile Include="Assets\CherryPick\Sprites\ControlDoor.cs" />
     <Compile Include="Assets\Scripts\AssemblyLines\AddNewAssemblyLine.cs" />
     <Compile Include="Assets\Scripts\AssemblyLines\AssemblyLine.cs" />
     <Compile Include="Assets\Scripts\AssemblyLines\Node.cs" />

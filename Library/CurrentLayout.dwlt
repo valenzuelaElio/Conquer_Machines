@@ -108,7 +108,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 96
+  controlID: 130
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 1
-  controlID: 97
+  controlID: 131
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 221}
   m_MaxSize: {x: 12008, y: 4021}
   vertical: 0
-  controlID: 11
+  controlID: 132
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_MinSize: {x: 334, y: 271}
   m_MaxSize: {x: 14004, y: 10021}
   vertical: 0
-  controlID: 98
+  controlID: 82
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -355,7 +355,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -417,9 +417,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 689.52, y: 345.36002, z: 0}
+    m_Target: {x: -1138.4917, y: 45.988663, z: 0}
     speed: 2
-    m_Value: {x: 689.52, y: 345.36002, z: 0}
+    m_Value: {x: -1138.4917, y: 45.988663, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -446,9 +446,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2181.3328
+    m_Target: 7130.19
     speed: 2
-    m_Value: 2181.3328
+    m_Value: 7130.19
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -515,7 +515,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 1afcffff00000000
+    m_ExpandedIDs: 1afcffff000000002c2b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -609,19 +609,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/AssemblyLines
+    - Assets/CherryPick/Sprites
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/AssemblyLines
+  - Assets/CherryPick/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ironh\Documents\UnityProjects\ConquerMachines
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6e290000
-    m_LastClickedID: 10606
-    m_ExpandedIDs: 0000000090260000a22800004e2900001e2a0000202a0000362b0000382b00003a2b00003c2b0000ffffff7f
+    m_SelectedIDs: fc280000
+    m_LastClickedID: 10492
+    m_ExpandedIDs: 00000000902600004c270000c2280000622a0000802b0000822b0000842b0000862b0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -649,7 +649,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000090260000a22800004e2900001e2a0000202a0000362b0000382b00003a2b00003c2b0000
+    m_ExpandedIDs: 00000000902600004c270000c2280000622a0000802b0000822b0000842b0000862b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
