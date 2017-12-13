@@ -14,17 +14,11 @@ public class AnimationEventTest : MonoBehaviour {
 	public GameObject obj1;
 	public GameObject obj2;
 
-	// Use this for initialization
 	void Start () {
 		obj1.SetActive(true);
 		obj2.SetActive(false);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	public void animationTest1(){
 		Debug.Log("Hola Mundo eventx");
 		particle1.Play();
