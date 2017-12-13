@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c234ca7e0c8fa7547b9405f9cd45c574
+timeCreated: 1511965874
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Iron Forge Irregular
+  fontNames:
+  - Iron Forge Irregular
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

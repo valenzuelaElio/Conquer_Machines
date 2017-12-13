@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager> {
 
         ScenesManager.GoToScene(sceneName);
 
-        Debug.Log("Escena : " + sceneName);
+        //Debug.Log("Escena : " + sceneName);
     }
 
     public void PrepareToBattle()

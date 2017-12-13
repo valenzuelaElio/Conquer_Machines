@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 2f5acd8a058c89845b54b9022104eabf
+timeCreated: 1511965872
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Iron Forge 3D
+  fontNames:
+  - Iron Forge 3D
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
+using System;
 
+[Serializable]
 public class DataExtractor {
 
     [XmlElement("EX-ID")] public string Id;

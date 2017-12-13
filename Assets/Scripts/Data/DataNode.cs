@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
+[Serializable]
 public abstract class DataNode
 {
-    [XmlElement("ID")] public string node_id { get; set; }
+    [XmlElement("ID")] public string node_id;
+    [XmlElement("IDLineaDeEnsamblaje")] public string assemblyLine_id;
+    [XmlElement("Sprite")] public string path;
 
     //Receta para creacion de nodos;
     [XmlElement("RawMaterial1")] public string rawMaterial1;
@@ -15,7 +18,8 @@ public abstract class DataNode
     [XmlElement("Quantity3")] public int cant3;
     [XmlElement("Quantity2")] public int cant2;
 
-    [XmlIgnore]Dictionary<string, int> Recipe;
+    [XmlIgnore] public Dictionary<string, int> Recipe;
+    [XmlIgnore] public int spriteIndex;
 
     public DataNode()
     {

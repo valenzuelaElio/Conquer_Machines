@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8ecf98edf32747b4e97288e5100c3095
+timeCreated: 1511965874
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Classic Robot Condensed
+  fontNames:
+  - Classic Robot Condensed
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4ead2293bf8c74346a5d5f2a33fbb22f, type: 3}
+  - {fileID: 12800000, guid: 1dfe28df090805c45bc80ff19a2a0955, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

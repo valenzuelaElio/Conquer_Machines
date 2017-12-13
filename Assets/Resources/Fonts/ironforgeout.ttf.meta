@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 40f773f3208e9d348a569c589a000b94
+timeCreated: 1511965873
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Iron Forge Outline
+  fontNames:
+  - Iron Forge Outline
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

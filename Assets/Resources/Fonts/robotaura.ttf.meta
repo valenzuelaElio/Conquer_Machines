@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f5ae3553893b85e408a11d32b6ad497d
+timeCreated: 1511965876
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Robotaur Academy
+  fontNames:
+  - Robotaur Academy
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

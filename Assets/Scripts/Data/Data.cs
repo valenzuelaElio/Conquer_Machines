@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
-[Serializable()]
+[Serializable]
 [XmlRoot("DataPool")]
 public class Data
 {
-    [XmlArray("Core Nodes")]
-    [XmlArrayItem("Core Node", typeof(Core))]
-    public Core[] Core_Nodes { get; set; }
-
-    [XmlArray("Upgrades Nodes")]
-    [XmlArrayItem("Upgrades Node", typeof(Upgrade))]
-    public Upgrade[] Upgrade_Nodes { get; set; }
+    [XmlArray("Nodes")]
+    [XmlArrayItem("Node", typeof(DataNode))]
+    public DataNode[] Nodes { get; set; }
 
     [XmlArray("AssemblyLines")]
     [XmlArrayItem("AssemblyLine", typeof(DataAssemblyLine))]
@@ -41,14 +37,13 @@ public class Data
 
     public Data()
     {
-        Core_Nodes =    new Core[100];
-        Upgrade_Nodes = new Upgrade[100];
-        ScenesNames =   new string[7];
-        AssemblyLines = new DataAssemblyLine[100];
-        Robots =        new DataRobot[100];
-        Misions =       new DataMision[100];
-        Extractors =    new DataExtractor[100];
-        RawMaterials =  new DataRawMaterial[100];
+        Nodes           = new DataNode[100];
+        ScenesNames     = new string[7];
+        AssemblyLines   = new DataAssemblyLine[100];
+        Robots          = new DataRobot[100];
+        Misions         = new DataMision[100];
+        Extractors      = new DataExtractor[100];
+        RawMaterials    = new DataRawMaterial[100];
 
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Main : MonoBehaviour {
-    private static string path = "test001Xml";
+    private static string path = "Data";
 
     public void StartGame()
     {
@@ -12,8 +12,12 @@ public class Main : MonoBehaviour {
 
     void Awake()
     {
+        //Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         //TODO: Se carga la informacion antes de comenzar el juego.
-        DataManager.CreateDataMapExample(path);
+        //DataManager.CreateDataMapExample(path);
+        DataManager.Load(path);
+        //DataManager.DeserializeData(path);
         DataManager.ListLoading();
         ScenesManager.LastLoadedScene = DataManager.DataMaster.ScenesNames[0];
     }

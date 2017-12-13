@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d66117d5cd523c548abd0c3110d09554
+timeCreated: 1511965875
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Iron Forge Plate
+  fontNames:
+  - Iron Forge Plate
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

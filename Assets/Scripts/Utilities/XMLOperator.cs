@@ -6,7 +6,6 @@ using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 using System.Xml;
-using UnityEditor;
 
 public class XMLOperator
 {
@@ -24,8 +23,8 @@ public class XMLOperator
         serializer.Serialize(streamWriter.BaseStream, item);
         streamWriter.Close();
 
-        dataDoc.Save(AssetDatabase.GetAssetPath(dataText));
-        Debug.Log(AssetDatabase.GetAssetPath(dataText));
+        //dataDoc.Save(AssetDatabase.GetAssetPath(dataText));
+        //Debug.Log(AssetDatabase.GetAssetPath(dataText));
 
     }
 
@@ -39,7 +38,7 @@ public class XMLOperator
 
     public static T Deserialize<T>(string path)
     {
-        dataText = Resources.Load<TextAsset>(path);
+        dataText = Resources.Load<TextAsset>("Data");
         dataDoc.LoadXml(dataText.text);
 
         Debug.Log(dataText.text);

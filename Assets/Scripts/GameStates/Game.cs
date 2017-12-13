@@ -5,14 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class Game {
 
-    public DataExtractor    currentSelectedExtractor;
+    public List<AssemblyLine> LineasDeEnsamblaje = new List<AssemblyLine>();
+    public AssemblyLine currentSelectedAssemblyLine = null;
+    public bool AssemblyLineSelected = false;
+
+    public Node currentSelectedNode = null;
+    public Node currentSelectedCoreNode = null;
+    public Node currentSelectedUpgradeNode = null;
+    public Node tempNode = null;
+    public bool NodeSelected = false;
+
+
+    public Extractor currentSelectedExtractor;
     public DataMision       currentSelectedMision;
-    public DataRawMaterial  currentSelectedRawMaterial;
-    public DataAssemblyLine currentSelectedAssemblyLine;
-    public DataRobot        currentSelectedRobot;
-    public DataNode         currentSelectedNode;
-    public Core             currentSelectedCoreNode;
-    public Upgrade          currentSelectedUpgradeNode;
+    public RawMaterial currentSelectedRawMaterial;
+    public RawMaterial tempRawMaterial;
+
+
+    public Robot currentSelectedRobot;
+    public Robot tempRobot;
+
+
+    
 
     public List<DataRobot> BattleDeck;
 
@@ -59,13 +73,39 @@ public class Game {
 
     public void SaveData()
     {
-
+        GuardarTiempoLineasDeEnsamblaje();
     }
 
-    public void CreateNewExtractor()
+    public void AddLineaDeEnsamblaje(AssemblyLine al)
     {
+        bool exist = false;
+        foreach (AssemblyLine temp in LineasDeEnsamblaje)
+        {
+            if (temp.MyAssemblyLine.assembly_Line_Id == al.MyAssemblyLine.assembly_Line_Id)
+            {
+                exist = true;
+            }
+        }
 
+        if (exist == false)
+        {
+            LineasDeEnsamblaje.Add(al);
+            Debug.Log("Exito");
+        }
     }
+
+    public void GuardarTiempoLineasDeEnsamblaje()
+    {
+        foreach (AssemblyLine linea in LineasDeEnsamblaje)
+        {
+            if (linea.Nodes[0].GetComponent<Node>().MyNode != null)
+            {
+                linea.SaveTime();
+                Debug.Log("Exito Al guardar el tiempo de " + linea.MyAssemblyLine.assembly_Line_Id);
+            }
+        }
+    }
+
 
 
 }

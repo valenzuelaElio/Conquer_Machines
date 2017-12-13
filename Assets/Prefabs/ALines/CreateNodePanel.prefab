@@ -60,9 +60,8 @@ GameObject:
   - component: {fileID: 224062574540719588}
   - component: {fileID: 222718877970683324}
   - component: {fileID: 114191518850735948}
-  - component: {fileID: 114211353788145062}
   - component: {fileID: 114608441885545144}
-  - component: {fileID: 114793329023204984}
+  - component: {fileID: 114827232954653246}
   m_Layer: 5
   m_Name: Node
   m_TagString: Untagged
@@ -167,18 +166,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114211353788145062
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279125334385396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541a35aba1a9f064d896da55df0a10ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Type: 4
 --- !u!114 &114329942549212776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -351,8 +338,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CreateNode
+      - m_Target: {fileID: 114776207784610750}
+        m_MethodName: FinishCreation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -495,18 +482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 1
---- !u!114 &114793329023204984
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279125334385396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa965fafc4b4b24d9627aeb3be68c21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: {fileID: 114385489377943948}
 --- !u!114 &114806726498428656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -534,6 +509,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114827232954653246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279125334385396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172bb895ac19f6940866aab217d0dd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 0
+  type: {fileID: 0}
+  ActiveOn: {fileID: 0}
+  ActiveOff: {fileID: 0}
 --- !u!114 &114916899825103170
 MonoBehaviour:
   m_ObjectHideFlags: 1

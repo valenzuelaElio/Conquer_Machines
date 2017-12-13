@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3274d949530c3604796cb37077fdcfb3
+timeCreated: 1511965872
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: IRON MAN OF WAR 001A NCV
+  fontNames:
+  - IRON MAN OF WAR 001A NCV
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

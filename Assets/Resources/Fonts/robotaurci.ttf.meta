@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: eddd1b8e206af0b4f8cb5bd0a7b3f609
+timeCreated: 1511965876
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Robotaur Condensed Italic
+  fontNames:
+  - Robotaur Condensed Italic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

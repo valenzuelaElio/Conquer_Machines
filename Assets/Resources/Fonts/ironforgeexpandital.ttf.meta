@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 34b2000e2a05761488901ebb8f61d5ab
+timeCreated: 1511965872
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Iron Forge Expanded Italic
+  fontNames:
+  - Iron Forge Expanded Italic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

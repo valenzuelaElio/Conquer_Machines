@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e4a8c7a65a47bca43a16c70619525c3a
+timeCreated: 1511965875
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Robotaur
+  fontNames:
+  - Robotaur
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

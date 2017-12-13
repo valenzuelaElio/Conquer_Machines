@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 87c0a69388dc65f439d41f17496c14f2
+timeCreated: 1511965873
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Iron Forge Laser Italic
+  fontNames:
+  - Iron Forge Laser Italic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

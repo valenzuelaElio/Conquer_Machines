@@ -25,6 +25,7 @@ public static class ScenesManager{
         }
         PreviousScene = LastLoadedScene;
         LastLoadedScene = SceneName;
+        DataManager.Save();
         //Debug.Log("LastScene = " + LastLoadedScene);
     }
 

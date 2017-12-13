@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 8ea0d249be7d76e428620e6cf3351417
+timeCreated: 1511965874
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Iron Forge 3D Italic
+  fontNames:
+  - Iron Forge 3D Italic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
